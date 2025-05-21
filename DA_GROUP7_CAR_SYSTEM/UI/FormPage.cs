@@ -6,20 +6,22 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+//using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace DA_GROUP7_CAR_SYSTEM
 {
-    public partial class Form1 : Form
+    public partial class FormPage : Form
     {
         int cpt = 1;
         Dictionary<Control, Rectangle> originalBounds = new Dictionary<Control, Rectangle>();
         Size originalFormSize;
 
 
-        public Form1()
+        public FormPage(string loginName)
         {
             InitializeComponent();
+            label1.Text = loginName;
             
            
         }
@@ -343,17 +345,29 @@ namespace DA_GROUP7_CAR_SYSTEM
             if (lg.lgin == true)
             {
                 label1.Visible = true;
-                gunaAdvenceButton2.Visible = true;
+                btnLogout.Visible = true;
             }
         }
         public void showfr()
         {
             label1.Visible = true;
-            gunaAdvenceButton2.Visible = true;
+            btnLogout.Visible = true;
             btn_Login.Visible = false;
         }
 
         private void gunaLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Login lg = new Login();
+            lg.Show();
+            this.Hide();
+        }
+
+        private void btnBuy_Click(object sender, EventArgs e)
         {
 
         }

@@ -1,6 +1,6 @@
 ﻿namespace DA_GROUP7_CAR_SYSTEM
 {
-    partial class Form1
+    partial class FormPage
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPage));
             this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -66,9 +66,9 @@
             this.gunaPictureBox_Car1 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaPictureBox_Car = new Guna.UI.WinForms.GunaPictureBox();
             this.btn_Login = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.gunaAdvenceButton6 = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btnBuy = new Guna.UI.WinForms.GunaAdvenceButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.gunaAdvenceButton2 = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btnLogout = new Guna.UI.WinForms.GunaAdvenceButton();
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).BeginInit();
             this.gunaPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox5)).BeginInit();
@@ -316,7 +316,7 @@
             // 
             this.gunaLabel9.AutoSize = true;
             this.gunaLabel9.Font = new System.Drawing.Font("Segoe UI Black", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel9.ForeColor = System.Drawing.Color.LightSalmon;
+            this.gunaLabel9.ForeColor = System.Drawing.Color.Black;
             this.gunaLabel9.Location = new System.Drawing.Point(41, 60);
             this.gunaLabel9.Name = "gunaLabel9";
             this.gunaLabel9.Size = new System.Drawing.Size(133, 38);
@@ -562,38 +562,39 @@
             this.btn_Login.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
             // 
-            // gunaAdvenceButton6
+            // btnBuy
             // 
-            this.gunaAdvenceButton6.AnimationHoverSpeed = 0.07F;
-            this.gunaAdvenceButton6.AnimationSpeed = 0.03F;
-            this.gunaAdvenceButton6.BackColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton6.BaseColor = System.Drawing.Color.DarkGray;
-            this.gunaAdvenceButton6.BorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton6.CheckedBaseColor = System.Drawing.Color.Silver;
-            this.gunaAdvenceButton6.CheckedBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton6.CheckedForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton6.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton6.CheckedImage")));
-            this.gunaAdvenceButton6.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.gunaAdvenceButton6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaAdvenceButton6.Font = new System.Drawing.Font("Century", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaAdvenceButton6.ForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton6.Image = null;
-            this.gunaAdvenceButton6.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaAdvenceButton6.LineBottom = 4;
-            this.gunaAdvenceButton6.LineColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton6.Location = new System.Drawing.Point(1133, 702);
-            this.gunaAdvenceButton6.Name = "gunaAdvenceButton6";
-            this.gunaAdvenceButton6.OnHoverBaseColor = System.Drawing.Color.Coral;
-            this.gunaAdvenceButton6.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton6.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton6.OnHoverImage = null;
-            this.gunaAdvenceButton6.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.gunaAdvenceButton6.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.gunaAdvenceButton6.Radius = 20;
-            this.gunaAdvenceButton6.Size = new System.Drawing.Size(137, 55);
-            this.gunaAdvenceButton6.TabIndex = 21;
-            this.gunaAdvenceButton6.Text = "Buy";
-            this.gunaAdvenceButton6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnBuy.AnimationHoverSpeed = 0.07F;
+            this.btnBuy.AnimationSpeed = 0.03F;
+            this.btnBuy.BackColor = System.Drawing.Color.Transparent;
+            this.btnBuy.BaseColor = System.Drawing.Color.DarkGray;
+            this.btnBuy.BorderColor = System.Drawing.Color.Black;
+            this.btnBuy.CheckedBaseColor = System.Drawing.Color.Silver;
+            this.btnBuy.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnBuy.CheckedForeColor = System.Drawing.Color.White;
+            this.btnBuy.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnBuy.CheckedImage")));
+            this.btnBuy.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnBuy.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuy.Font = new System.Drawing.Font("Century", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuy.ForeColor = System.Drawing.Color.White;
+            this.btnBuy.Image = null;
+            this.btnBuy.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnBuy.LineBottom = 4;
+            this.btnBuy.LineColor = System.Drawing.Color.Transparent;
+            this.btnBuy.Location = new System.Drawing.Point(1133, 702);
+            this.btnBuy.Name = "btnBuy";
+            this.btnBuy.OnHoverBaseColor = System.Drawing.Color.Coral;
+            this.btnBuy.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnBuy.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnBuy.OnHoverImage = null;
+            this.btnBuy.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnBuy.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnBuy.Radius = 20;
+            this.btnBuy.Size = new System.Drawing.Size(137, 55);
+            this.btnBuy.TabIndex = 21;
+            this.btnBuy.Text = "Buy";
+            this.btnBuy.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
             // 
             // label1
             // 
@@ -607,39 +608,40 @@
             this.label1.Text = "Name User";
             this.label1.Visible = false;
             // 
-            // gunaAdvenceButton2
+            // btnLogout
             // 
-            this.gunaAdvenceButton2.AnimationHoverSpeed = 0.07F;
-            this.gunaAdvenceButton2.AnimationSpeed = 0.03F;
-            this.gunaAdvenceButton2.BackColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton2.BaseColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton2.BorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton2.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.gunaAdvenceButton2.CheckedBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton2.CheckedForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton2.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton2.CheckedImage")));
-            this.gunaAdvenceButton2.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.gunaAdvenceButton2.Font = new System.Drawing.Font("Segoe UI Historic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaAdvenceButton2.ForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton2.Image = null;
-            this.gunaAdvenceButton2.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaAdvenceButton2.LineBottom = 4;
-            this.gunaAdvenceButton2.LineColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton2.Location = new System.Drawing.Point(40, 61);
-            this.gunaAdvenceButton2.Name = "gunaAdvenceButton2";
-            this.gunaAdvenceButton2.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton2.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton2.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton2.OnHoverImage = null;
-            this.gunaAdvenceButton2.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.gunaAdvenceButton2.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton2.Size = new System.Drawing.Size(101, 31);
-            this.gunaAdvenceButton2.TabIndex = 23;
-            this.gunaAdvenceButton2.Text = "Log Out";
-            this.gunaAdvenceButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaAdvenceButton2.Visible = false;
+            this.btnLogout.AnimationHoverSpeed = 0.07F;
+            this.btnLogout.AnimationSpeed = 0.03F;
+            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.BaseColor = System.Drawing.Color.Transparent;
+            this.btnLogout.BorderColor = System.Drawing.Color.Black;
+            this.btnLogout.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnLogout.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnLogout.CheckedForeColor = System.Drawing.Color.White;
+            this.btnLogout.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnLogout.CheckedImage")));
+            this.btnLogout.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI Historic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.Image = null;
+            this.btnLogout.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnLogout.LineBottom = 4;
+            this.btnLogout.LineColor = System.Drawing.Color.Transparent;
+            this.btnLogout.Location = new System.Drawing.Point(40, 61);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.btnLogout.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnLogout.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnLogout.OnHoverImage = null;
+            this.btnLogout.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnLogout.OnPressedColor = System.Drawing.Color.Black;
+            this.btnLogout.Size = new System.Drawing.Size(101, 31);
+            this.btnLogout.TabIndex = 23;
+            this.btnLogout.Text = "Log Out";
+            this.btnLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnLogout.Visible = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // Form1
+            // FormPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -647,9 +649,9 @@
             this.BackgroundImage = global::DA_GROUP7_CAR_SYSTEM.Properties.Resources.Bg_showroom__new;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1415, 1000);
-            this.Controls.Add(this.gunaAdvenceButton2);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.gunaAdvenceButton6);
+            this.Controls.Add(this.btnBuy);
             this.Controls.Add(this.gunaPanel3);
             this.Controls.Add(this.gunaLabel3);
             this.Controls.Add(this.gunaLabel_name);
@@ -667,7 +669,7 @@
             this.Controls.Add(this.guna2ControlBox1);
             this.Controls.Add(this.btn_Login);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "FormPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -726,9 +728,9 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel7;
         private Guna.UI.WinForms.GunaCircleProgressBar gunaCircleProgressBar1;
         private Guna.UI.WinForms.GunaLabel gunaLabel9;
-        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton6;
+        private Guna.UI.WinForms.GunaAdvenceButton btnBuy;
         private System.Windows.Forms.Label label1;
-        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton2;
+        private Guna.UI.WinForms.GunaAdvenceButton btnLogout;
     }
 }
 
