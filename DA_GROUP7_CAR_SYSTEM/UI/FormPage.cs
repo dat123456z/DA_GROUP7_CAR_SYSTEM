@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DA_GROUP7_CAR_SYSTEM.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,6 +7,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+//using System.Web.UI.WebControls;
+
 //using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
@@ -18,12 +21,13 @@ namespace DA_GROUP7_CAR_SYSTEM
         Size originalFormSize;
 
 
-        public FormPage(string loginName)
+        public FormPage(string fullName)
         {
             InitializeComponent();
-            label1.Text = loginName;
-            
-           
+            label1.Text = fullName;
+            label1.Visible = true;
+            btnLogout.Visible = true;
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -352,7 +356,7 @@ namespace DA_GROUP7_CAR_SYSTEM
         {
             label1.Visible = true;
             btnLogout.Visible = true;
-            btn_Login.Visible = false;
+            //btn_Login.Visible = false;
         }
 
         private void gunaLabel1_Click(object sender, EventArgs e)
@@ -369,7 +373,9 @@ namespace DA_GROUP7_CAR_SYSTEM
 
         private void btnBuy_Click(object sender, EventArgs e)
         {
-
+            BuyCar bc = new BuyCar(label1.Text);
+            bc.Show();
+            this.Hide();
         }
     }
 }

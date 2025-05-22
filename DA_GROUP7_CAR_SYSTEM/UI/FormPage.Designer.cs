@@ -65,7 +65,6 @@
             this.gunaPictureBox_Car2 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaPictureBox_Car1 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaPictureBox_Car = new Guna.UI.WinForms.GunaPictureBox();
-            this.btn_Login = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnBuy = new Guna.UI.WinForms.GunaAdvenceButton();
             this.label1 = new System.Windows.Forms.Label();
             this.btnLogout = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -530,38 +529,6 @@
             this.gunaPictureBox_Car.TabIndex = 9;
             this.gunaPictureBox_Car.TabStop = false;
             // 
-            // btn_Login
-            // 
-            this.btn_Login.AnimationHoverSpeed = 0.07F;
-            this.btn_Login.AnimationSpeed = 0.03F;
-            this.btn_Login.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Login.BaseColor = System.Drawing.Color.Transparent;
-            this.btn_Login.BorderColor = System.Drawing.Color.Black;
-            this.btn_Login.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btn_Login.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btn_Login.CheckedForeColor = System.Drawing.Color.White;
-            this.btn_Login.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btn_Login.CheckedImage")));
-            this.btn_Login.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btn_Login.Font = new System.Drawing.Font("Segoe UI Historic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Login.ForeColor = System.Drawing.Color.White;
-            this.btn_Login.Image = null;
-            this.btn_Login.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_Login.LineBottom = 4;
-            this.btn_Login.LineColor = System.Drawing.Color.Transparent;
-            this.btn_Login.Location = new System.Drawing.Point(135, 12);
-            this.btn_Login.Name = "btn_Login";
-            this.btn_Login.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.btn_Login.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btn_Login.OnHoverForeColor = System.Drawing.Color.White;
-            this.btn_Login.OnHoverImage = null;
-            this.btn_Login.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btn_Login.OnPressedColor = System.Drawing.Color.Black;
-            this.btn_Login.Size = new System.Drawing.Size(101, 55);
-            this.btn_Login.TabIndex = 0;
-            this.btn_Login.Text = "Log in";
-            this.btn_Login.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
-            // 
             // btnBuy
             // 
             this.btnBuy.AnimationHoverSpeed = 0.07F;
@@ -667,7 +634,6 @@
             this.Controls.Add(this.guna2ControlBox3);
             this.Controls.Add(this.guna2ControlBox2);
             this.Controls.Add(this.guna2ControlBox1);
-            this.Controls.Add(this.btn_Login);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -696,7 +662,6 @@
         #endregion
 
         private Guna.UI.WinForms.GunaDragControl gunaDragControl1;
-        private Guna.UI.WinForms.GunaAdvenceButton btn_Login;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox3;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;

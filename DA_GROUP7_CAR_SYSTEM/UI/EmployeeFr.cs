@@ -16,5 +16,10 @@ namespace DA_GROUP7_CAR_SYSTEM
         {
             InitializeComponent();
         }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

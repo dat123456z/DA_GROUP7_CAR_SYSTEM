@@ -104,6 +104,7 @@
             this.guna2Button2.Size = new System.Drawing.Size(135, 59);
             this.guna2Button2.TabIndex = 13;
             this.guna2Button2.Text = "Update";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button1
             // 
