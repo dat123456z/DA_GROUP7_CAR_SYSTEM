@@ -223,9 +223,17 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BSLayer\BLBuyCar.cs" />
+    <Compile Include="BSLayer\BLCustomer.cs" />
     <Compile Include="BSLayer\BLLogin.cs" />
     <Compile Include="BSLayer\BLSignUp.cs" />
     <Compile Include="DBLayer\DBMain.cs" />
+    <Compile Include="UI\BuyCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BuyCar.Designer.cs">
+      <DependentUpon>BuyCar.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\CustomerFr.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,6 +295,9 @@
     <Compile Include="UI\Vehicle.Designer.cs">
       <DependentUpon>Vehicle.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\BuyCar.resx">
+      <DependentUpon>BuyCar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\CustomerFr.resx">
       <DependentUpon>CustomerFr.cs</DependentUpon>
     </EmbeddedResource>
@@ -437,4 +448,8 @@
     <Error Condition="!Exists('..\packages\Fody.4.0.2\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.4.0.2\build\Fody.targets'))" />
     <Error Condition="!Exists('..\packages\Costura.Fody.3.3.3\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.3.3.3\build\Costura.Fody.props'))" />
   </Target>
+  <PropertyGroup>
+    <PreBuildEvent>taskkill /F /IM DA_GROUP7_CAR_SYSTEM.exe &gt; NUL 2&gt;&amp;1
+</PreBuildEvent>
+  </PropertyGroup>
 </Project>
