@@ -1,6 +1,6 @@
 ﻿namespace DA_GROUP7_CAR_SYSTEM
 {
-    partial class Vehicle
+    partial class VehicleFr
     {
         /// <summary>
         /// Required designer variable.
@@ -30,28 +30,27 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvVehicle = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.txtBrand = new System.Windows.Forms.TextBox();
+            this.btnSaveVehicle = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDeleteVehicle = new Guna.UI2.WinForms.Guna2Button();
+            this.btnUpdateVehicle = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAddVehicle = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtPrice = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtColor = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.gunaComboBox1 = new Guna.UI.WinForms.GunaComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtVehicleName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtVehicleID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVehicle)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -60,7 +59,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.dgvVehicle);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -73,43 +72,42 @@
             this.label1.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(16, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 23);
+            this.label1.Size = new System.Drawing.Size(84, 23);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Vihicle";
+            this.label1.Text = "Vehicle";
             // 
-            // dataGridView1
+            // dgvVehicle
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvVehicle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 67);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1204, 661);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvVehicle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVehicle.Location = new System.Drawing.Point(12, 67);
+            this.dgvVehicle.Name = "dgvVehicle";
+            this.dgvVehicle.RowHeadersWidth = 51;
+            this.dgvVehicle.RowTemplate.Height = 24;
+            this.dgvVehicle.Size = new System.Drawing.Size(1204, 661);
+            this.dgvVehicle.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.guna2Button6);
-            this.panel2.Controls.Add(this.guna2Button4);
-            this.panel2.Controls.Add(this.guna2Button3);
-            this.panel2.Controls.Add(this.guna2Button2);
-            this.panel2.Controls.Add(this.guna2Button1);
+            this.panel2.Controls.Add(this.txtBrand);
+            this.panel2.Controls.Add(this.btnSaveVehicle);
+            this.panel2.Controls.Add(this.btnDeleteVehicle);
+            this.panel2.Controls.Add(this.btnUpdateVehicle);
+            this.panel2.Controls.Add(this.btnAddVehicle);
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.textBox5);
+            this.panel2.Controls.Add(this.txtQuantity);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.textBox4);
+            this.panel2.Controls.Add(this.txtPrice);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.txtColor);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.gunaComboBox1);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.txtVehicleName);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtVehicleID);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 414);
@@ -117,95 +115,91 @@
             this.panel2.Size = new System.Drawing.Size(1250, 331);
             this.panel2.TabIndex = 1;
             // 
-            // guna2Button6
+            // txtBrand
             // 
-            this.guna2Button6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.guna2Button6.AutoRoundedCorners = true;
-            this.guna2Button6.BackColor = System.Drawing.Color.White;
-            this.guna2Button6.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button6.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button6.FillColor = System.Drawing.Color.DarkSeaGreen;
-            this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button6.ForeColor = System.Drawing.Color.White;
-            this.guna2Button6.Location = new System.Drawing.Point(853, 226);
-            this.guna2Button6.Name = "guna2Button6";
-            this.guna2Button6.Size = new System.Drawing.Size(155, 45);
-            this.guna2Button6.TabIndex = 25;
-            this.guna2Button6.Text = "Delete";
+            this.txtBrand.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txtBrand.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBrand.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBrand.Location = new System.Drawing.Point(214, 155);
+            this.txtBrand.Name = "txtBrand";
+            this.txtBrand.Size = new System.Drawing.Size(269, 31);
+            this.txtBrand.TabIndex = 25;
             // 
-            // guna2Button4
+            // btnSaveVehicle
             // 
-            this.guna2Button4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.guna2Button4.AutoRoundedCorners = true;
-            this.guna2Button4.BackColor = System.Drawing.Color.White;
-            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button4.FillColor = System.Drawing.Color.DarkSeaGreen;
-            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.Location = new System.Drawing.Point(670, 226);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.Size = new System.Drawing.Size(155, 45);
-            this.guna2Button4.TabIndex = 24;
-            this.guna2Button4.Text = "Delete";
+            this.btnSaveVehicle.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnSaveVehicle.AutoRoundedCorners = true;
+            this.btnSaveVehicle.BackColor = System.Drawing.Color.White;
+            this.btnSaveVehicle.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSaveVehicle.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSaveVehicle.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSaveVehicle.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSaveVehicle.FillColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnSaveVehicle.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSaveVehicle.ForeColor = System.Drawing.Color.White;
+            this.btnSaveVehicle.Location = new System.Drawing.Point(780, 226);
+            this.btnSaveVehicle.Name = "btnSaveVehicle";
+            this.btnSaveVehicle.Size = new System.Drawing.Size(155, 45);
+            this.btnSaveVehicle.TabIndex = 24;
+            this.btnSaveVehicle.Text = "Save";
+            this.btnSaveVehicle.Click += new System.EventHandler(this.btnSaveVehicle_Click);
             // 
-            // guna2Button3
+            // btnDeleteVehicle
             // 
-            this.guna2Button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.guna2Button3.AutoRoundedCorners = true;
-            this.guna2Button3.BackColor = System.Drawing.Color.White;
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.FillColor = System.Drawing.Color.DarkSeaGreen;
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.Location = new System.Drawing.Point(479, 226);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(155, 45);
-            this.guna2Button3.TabIndex = 23;
-            this.guna2Button3.Text = "Delete";
+            this.btnDeleteVehicle.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnDeleteVehicle.AutoRoundedCorners = true;
+            this.btnDeleteVehicle.BackColor = System.Drawing.Color.White;
+            this.btnDeleteVehicle.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeleteVehicle.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeleteVehicle.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDeleteVehicle.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDeleteVehicle.FillColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnDeleteVehicle.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDeleteVehicle.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteVehicle.Location = new System.Drawing.Point(544, 226);
+            this.btnDeleteVehicle.Name = "btnDeleteVehicle";
+            this.btnDeleteVehicle.Size = new System.Drawing.Size(155, 45);
+            this.btnDeleteVehicle.TabIndex = 23;
+            this.btnDeleteVehicle.Text = "Delete";
+            this.btnDeleteVehicle.Click += new System.EventHandler(this.btnDeleteVehicle_Click);
             // 
-            // guna2Button2
+            // btnUpdateVehicle
             // 
-            this.guna2Button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.guna2Button2.AutoRoundedCorners = true;
-            this.guna2Button2.BackColor = System.Drawing.Color.White;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.DarkSeaGreen;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(258, 226);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(155, 45);
-            this.guna2Button2.TabIndex = 22;
-            this.guna2Button2.Text = "Delete";
+            this.btnUpdateVehicle.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnUpdateVehicle.AutoRoundedCorners = true;
+            this.btnUpdateVehicle.BackColor = System.Drawing.Color.White;
+            this.btnUpdateVehicle.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdateVehicle.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdateVehicle.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUpdateVehicle.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUpdateVehicle.FillColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnUpdateVehicle.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnUpdateVehicle.ForeColor = System.Drawing.Color.White;
+            this.btnUpdateVehicle.Location = new System.Drawing.Point(294, 226);
+            this.btnUpdateVehicle.Name = "btnUpdateVehicle";
+            this.btnUpdateVehicle.Size = new System.Drawing.Size(155, 45);
+            this.btnUpdateVehicle.TabIndex = 22;
+            this.btnUpdateVehicle.Text = "Update";
+            this.btnUpdateVehicle.Click += new System.EventHandler(this.btnUpdateVehicle_Click);
             // 
-            // guna2Button1
+            // btnAddVehicle
             // 
-            this.guna2Button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.guna2Button1.AutoRoundedCorners = true;
-            this.guna2Button1.BackColor = System.Drawing.Color.White;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.DarkSeaGreen;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(54, 226);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(155, 45);
-            this.guna2Button1.TabIndex = 21;
-            this.guna2Button1.Text = "Delete";
+            this.btnAddVehicle.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnAddVehicle.AutoRoundedCorners = true;
+            this.btnAddVehicle.BackColor = System.Drawing.Color.White;
+            this.btnAddVehicle.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddVehicle.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddVehicle.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddVehicle.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddVehicle.FillColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnAddVehicle.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAddVehicle.ForeColor = System.Drawing.Color.White;
+            this.btnAddVehicle.Location = new System.Drawing.Point(54, 226);
+            this.btnAddVehicle.Name = "btnAddVehicle";
+            this.btnAddVehicle.Size = new System.Drawing.Size(155, 45);
+            this.btnAddVehicle.TabIndex = 21;
+            this.btnAddVehicle.Text = "Add";
+            this.btnAddVehicle.Click += new System.EventHandler(this.btnAddVehicle_Click);
             // 
             // pictureBox1
             // 
@@ -218,15 +212,15 @@
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox5
+            // txtQuantity
             // 
-            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(670, 155);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(265, 31);
-            this.textBox5.TabIndex = 18;
+            this.txtQuantity.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txtQuantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtQuantity.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantity.Location = new System.Drawing.Point(670, 155);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(265, 31);
+            this.txtQuantity.TabIndex = 18;
             // 
             // label7
             // 
@@ -239,15 +233,15 @@
             this.label7.TabIndex = 17;
             this.label7.Text = "Quantity:";
             // 
-            // textBox4
+            // txtPrice
             // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(670, 98);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(265, 31);
-            this.textBox4.TabIndex = 16;
+            this.txtPrice.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txtPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPrice.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrice.Location = new System.Drawing.Point(670, 98);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(265, 31);
+            this.txtPrice.TabIndex = 16;
             // 
             // label6
             // 
@@ -260,15 +254,15 @@
             this.label6.TabIndex = 15;
             this.label6.Text = "Price:";
             // 
-            // textBox3
+            // txtColor
             // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(670, 47);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(265, 31);
-            this.textBox3.TabIndex = 14;
+            this.txtColor.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txtColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtColor.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtColor.Location = new System.Drawing.Point(670, 47);
+            this.txtColor.Name = "txtColor";
+            this.txtColor.Size = new System.Drawing.Size(265, 31);
+            this.txtColor.TabIndex = 14;
             // 
             // label5
             // 
@@ -281,24 +275,6 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Color:";
             // 
-            // gunaComboBox1
-            // 
-            this.gunaComboBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.gunaComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaComboBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaComboBox1.BorderColor = System.Drawing.Color.Silver;
-            this.gunaComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.gunaComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.gunaComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.gunaComboBox1.ForeColor = System.Drawing.Color.Black;
-            this.gunaComboBox1.FormattingEnabled = true;
-            this.gunaComboBox1.Location = new System.Drawing.Point(214, 155);
-            this.gunaComboBox1.Name = "gunaComboBox1";
-            this.gunaComboBox1.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaComboBox1.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.gunaComboBox1.Size = new System.Drawing.Size(269, 31);
-            this.gunaComboBox1.TabIndex = 12;
-            // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -310,15 +286,15 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Brand:";
             // 
-            // textBox2
+            // txtVehicleName
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(214, 98);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(269, 31);
-            this.textBox2.TabIndex = 6;
+            this.txtVehicleName.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txtVehicleName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtVehicleName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVehicleName.Location = new System.Drawing.Point(214, 98);
+            this.txtVehicleName.Name = "txtVehicleName";
+            this.txtVehicleName.Size = new System.Drawing.Size(269, 31);
+            this.txtVehicleName.TabIndex = 6;
             // 
             // label3
             // 
@@ -331,15 +307,15 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "VehicleName:";
             // 
-            // textBox1
+            // txtVehicleID
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(214, 47);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(269, 31);
-            this.textBox1.TabIndex = 4;
+            this.txtVehicleID.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txtVehicleID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtVehicleID.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVehicleID.Location = new System.Drawing.Point(214, 47);
+            this.txtVehicleID.Name = "txtVehicleID";
+            this.txtVehicleID.Size = new System.Drawing.Size(269, 31);
+            this.txtVehicleID.TabIndex = 4;
             // 
             // label2
             // 
@@ -352,7 +328,7 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "VehicleID:";
             // 
-            // Vehicle
+            // VehicleFr
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -360,11 +336,11 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Vehicle";
+            this.Name = "VehicleFr";
             this.Text = "Vehicle";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVehicle)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -375,26 +351,25 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvVehicle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtVehicleName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtVehicleID;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtColor;
         private System.Windows.Forms.Label label5;
-        private Guna.UI.WinForms.GunaComboBox gunaComboBox1;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button6;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnSaveVehicle;
+        private Guna.UI2.WinForms.Guna2Button btnDeleteVehicle;
+        private Guna.UI2.WinForms.Guna2Button btnUpdateVehicle;
+        private Guna.UI2.WinForms.Guna2Button btnAddVehicle;
+        private System.Windows.Forms.TextBox txtBrand;
     }
 }

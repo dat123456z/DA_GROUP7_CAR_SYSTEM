@@ -62,7 +62,7 @@ namespace DA_GROUP7_CAR_SYSTEM
 
         private void btn_Vehicle_Click(object sender, EventArgs e)
         {
-            openChildForm(new Vehicle());
+            openChildForm(new VehicleFr());
           //  hideSubMenu();  
         }
         private void btn_Invoice_Click(object sender, EventArgs e)
