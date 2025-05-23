@@ -43,8 +43,6 @@ namespace DA_GROUP7_CAR_SYSTEM.BSLayer
                 db.MyExecuteNonQuery(insertSql, CommandType.Text, ref error);
                 return true;
 
-                db.MyExecuteNonQuery(insertSql, CommandType.Text,ref error);
-                return true;
             }
             catch (Exception ex)
             {

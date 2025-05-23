@@ -8,11 +8,11 @@ namespace DA_GROUP7_CAR_SYSTEM
     public partial class InvoiceDetail : Form
     {
         private DBMain db = new DBMain();
-
         public InvoiceDetail()
         {
             InitializeComponent();
-            LoadInvoiceDetailData();
+            if (!this.DesignMode)
+                LoadInvoiceDetailData();
         }
 
         private void LoadInvoiceDetailData()

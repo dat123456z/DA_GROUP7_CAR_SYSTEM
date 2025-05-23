@@ -12,7 +12,8 @@ namespace DA_GROUP7_CAR_SYSTEM
         public EmployeeFr()
         {
             InitializeComponent();
-            LoadEmployeeData();
+            if (!this.DesignMode)
+                LoadEmployeeData();
         }
 
         private void LoadEmployeeData()

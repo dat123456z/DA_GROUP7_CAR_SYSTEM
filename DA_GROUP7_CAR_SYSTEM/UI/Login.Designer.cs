@@ -334,7 +334,7 @@ namespace DA_GROUP7_CAR_SYSTEM
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Padding = new System.Windows.Forms.Padding(5);
-            this.txtPassword.PlaceholderText = "password";
+            this.txtPassword.PlaceholderText = "Password";
             this.txtPassword.SelectedText = "";
             this.txtPassword.Size = new System.Drawing.Size(285, 48);
             this.txtPassword.TabIndex = 10;
@@ -356,7 +356,7 @@ namespace DA_GROUP7_CAR_SYSTEM
             this.txtLoginName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtLoginName.Name = "txtLoginName";
             this.txtLoginName.Padding = new System.Windows.Forms.Padding(5);
-            this.txtLoginName.PlaceholderText = "Login name...";
+            this.txtLoginName.PlaceholderText = "Login Name...";
             this.txtLoginName.SelectedText = "";
             this.txtLoginName.Size = new System.Drawing.Size(285, 48);
             this.txtLoginName.TabIndex = 9;

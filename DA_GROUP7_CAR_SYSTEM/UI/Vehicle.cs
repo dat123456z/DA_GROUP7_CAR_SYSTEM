@@ -13,8 +13,8 @@ namespace DA_GROUP7_CAR_SYSTEM
         public VehicleFr()
         {
             InitializeComponent();
-            //txtVehicleID.ReadOnly = true;
-            LoadVehicleData();
+            if (!this.DesignMode)
+                LoadVehicleData();
         }
 
         private void LoadVehicleData()

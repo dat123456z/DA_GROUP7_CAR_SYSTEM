@@ -12,7 +12,8 @@ namespace DA_GROUP7_CAR_SYSTEM
         public Invoice()
         {
             InitializeComponent();
-            LoadInvoiceData();
+            if (!this.DesignMode)
+                LoadInvoiceData();
         }
 
         private void LoadInvoiceData()
