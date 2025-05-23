@@ -29,44 +29,44 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtVehicleID = new System.Windows.Forms.TextBox();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
+            this.btnSaveInvoiceDetail = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDeleteInvoiceDetail = new Guna.UI2.WinForms.Guna2Button();
+            this.btnUpdateInvoiceDetail = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAddInvoiceDetail = new Guna.UI2.WinForms.Guna2Button();
+            this.txtLineTotal = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtUnitPrice = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtInvoiceID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvInvoiceDetail = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInvoiceDetail)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.guna2Button4);
-            this.panel1.Controls.Add(this.guna2Button3);
-            this.panel1.Controls.Add(this.guna2Button2);
-            this.panel1.Controls.Add(this.guna2Button1);
-            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.txtVehicleID);
+            this.panel1.Controls.Add(this.txtQuantity);
+            this.panel1.Controls.Add(this.btnSaveInvoiceDetail);
+            this.panel1.Controls.Add(this.btnDeleteInvoiceDetail);
+            this.panel1.Controls.Add(this.btnUpdateInvoiceDetail);
+            this.panel1.Controls.Add(this.btnAddInvoiceDetail);
+            this.panel1.Controls.Add(this.txtLineTotal);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.txtUnitPrice);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtInvoiceID);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -74,104 +74,108 @@
             this.panel1.Size = new System.Drawing.Size(421, 745);
             this.panel1.TabIndex = 2;
             // 
-            // textBox2
+            // txtVehicleID
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(163, 150);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(213, 31);
-            this.textBox2.TabIndex = 38;
+            this.txtVehicleID.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtVehicleID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtVehicleID.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVehicleID.Location = new System.Drawing.Point(163, 150);
+            this.txtVehicleID.Name = "txtVehicleID";
+            this.txtVehicleID.Size = new System.Drawing.Size(213, 31);
+            this.txtVehicleID.TabIndex = 38;
             // 
-            // textBox3
+            // txtQuantity
             // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(163, 205);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(213, 31);
-            this.textBox3.TabIndex = 37;
+            this.txtQuantity.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtQuantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtQuantity.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantity.Location = new System.Drawing.Point(163, 205);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(213, 31);
+            this.txtQuantity.TabIndex = 37;
             // 
-            // guna2Button4
+            // btnSaveInvoiceDetail
             // 
-            this.guna2Button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.guna2Button4.AutoRoundedCorners = true;
-            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button4.FillColor = System.Drawing.Color.DarkSeaGreen;
-            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.Location = new System.Drawing.Point(241, 532);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.Size = new System.Drawing.Size(135, 59);
-            this.guna2Button4.TabIndex = 36;
-            this.guna2Button4.Text = "Save";
+            this.btnSaveInvoiceDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSaveInvoiceDetail.AutoRoundedCorners = true;
+            this.btnSaveInvoiceDetail.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSaveInvoiceDetail.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSaveInvoiceDetail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSaveInvoiceDetail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSaveInvoiceDetail.FillColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnSaveInvoiceDetail.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSaveInvoiceDetail.ForeColor = System.Drawing.Color.White;
+            this.btnSaveInvoiceDetail.Location = new System.Drawing.Point(241, 532);
+            this.btnSaveInvoiceDetail.Name = "btnSaveInvoiceDetail";
+            this.btnSaveInvoiceDetail.Size = new System.Drawing.Size(135, 59);
+            this.btnSaveInvoiceDetail.TabIndex = 36;
+            this.btnSaveInvoiceDetail.Text = "Save";
+            this.btnSaveInvoiceDetail.Click += new System.EventHandler(this.btnSaveDetail_Click);
             // 
-            // guna2Button3
+            // btnDeleteInvoiceDetail
             // 
-            this.guna2Button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.guna2Button3.AutoRoundedCorners = true;
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.FillColor = System.Drawing.Color.DarkSeaGreen;
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.Location = new System.Drawing.Point(45, 532);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(135, 59);
-            this.guna2Button3.TabIndex = 35;
-            this.guna2Button3.Text = "Delete";
+            this.btnDeleteInvoiceDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDeleteInvoiceDetail.AutoRoundedCorners = true;
+            this.btnDeleteInvoiceDetail.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeleteInvoiceDetail.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeleteInvoiceDetail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDeleteInvoiceDetail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDeleteInvoiceDetail.FillColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnDeleteInvoiceDetail.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDeleteInvoiceDetail.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteInvoiceDetail.Location = new System.Drawing.Point(45, 532);
+            this.btnDeleteInvoiceDetail.Name = "btnDeleteInvoiceDetail";
+            this.btnDeleteInvoiceDetail.Size = new System.Drawing.Size(135, 59);
+            this.btnDeleteInvoiceDetail.TabIndex = 35;
+            this.btnDeleteInvoiceDetail.Text = "Delete";
+            this.btnDeleteInvoiceDetail.Click += new System.EventHandler(this.btnDeleteDetail_Click);
             // 
-            // guna2Button2
+            // btnUpdateInvoiceDetail
             // 
-            this.guna2Button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.guna2Button2.AutoRoundedCorners = true;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.DarkSeaGreen;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(241, 427);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(135, 59);
-            this.guna2Button2.TabIndex = 34;
-            this.guna2Button2.Text = "Update";
+            this.btnUpdateInvoiceDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnUpdateInvoiceDetail.AutoRoundedCorners = true;
+            this.btnUpdateInvoiceDetail.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdateInvoiceDetail.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdateInvoiceDetail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUpdateInvoiceDetail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUpdateInvoiceDetail.FillColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnUpdateInvoiceDetail.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnUpdateInvoiceDetail.ForeColor = System.Drawing.Color.White;
+            this.btnUpdateInvoiceDetail.Location = new System.Drawing.Point(241, 427);
+            this.btnUpdateInvoiceDetail.Name = "btnUpdateInvoiceDetail";
+            this.btnUpdateInvoiceDetail.Size = new System.Drawing.Size(135, 59);
+            this.btnUpdateInvoiceDetail.TabIndex = 34;
+            this.btnUpdateInvoiceDetail.Text = "Update";
+            this.btnUpdateInvoiceDetail.Click += new System.EventHandler(this.btnUpdateDetail_Click);
             // 
-            // guna2Button1
+            // btnAddInvoiceDetail
             // 
-            this.guna2Button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.guna2Button1.AutoRoundedCorners = true;
-            this.guna2Button1.BackColor = System.Drawing.Color.White;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.DarkSeaGreen;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(48, 427);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(135, 59);
-            this.guna2Button1.TabIndex = 33;
-            this.guna2Button1.Text = "Add";
+            this.btnAddInvoiceDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAddInvoiceDetail.AutoRoundedCorners = true;
+            this.btnAddInvoiceDetail.BackColor = System.Drawing.Color.White;
+            this.btnAddInvoiceDetail.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddInvoiceDetail.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddInvoiceDetail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddInvoiceDetail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddInvoiceDetail.FillColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnAddInvoiceDetail.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAddInvoiceDetail.ForeColor = System.Drawing.Color.White;
+            this.btnAddInvoiceDetail.Location = new System.Drawing.Point(48, 427);
+            this.btnAddInvoiceDetail.Name = "btnAddInvoiceDetail";
+            this.btnAddInvoiceDetail.Size = new System.Drawing.Size(135, 59);
+            this.btnAddInvoiceDetail.TabIndex = 33;
+            this.btnAddInvoiceDetail.Text = "Add";
+            this.btnAddInvoiceDetail.Click += new System.EventHandler(this.btnAddDetail_Click);
             // 
-            // textBox5
+            // txtLineTotal
             // 
-            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(163, 336);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(213, 31);
-            this.textBox5.TabIndex = 31;
+            this.txtLineTotal.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtLineTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtLineTotal.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLineTotal.Location = new System.Drawing.Point(163, 336);
+            this.txtLineTotal.Name = "txtLineTotal";
+            this.txtLineTotal.Size = new System.Drawing.Size(213, 31);
+            this.txtLineTotal.TabIndex = 31;
             // 
             // label6
             // 
@@ -184,15 +188,15 @@
             this.label6.TabIndex = 30;
             this.label6.Text = "LineTotal:";
             // 
-            // textBox4
+            // txtUnitPrice
             // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(163, 272);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(213, 31);
-            this.textBox4.TabIndex = 29;
+            this.txtUnitPrice.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtUnitPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUnitPrice.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUnitPrice.Location = new System.Drawing.Point(163, 272);
+            this.txtUnitPrice.Name = "txtUnitPrice";
+            this.txtUnitPrice.Size = new System.Drawing.Size(213, 31);
+            this.txtUnitPrice.TabIndex = 29;
             // 
             // label5
             // 
@@ -227,15 +231,15 @@
             this.label3.TabIndex = 25;
             this.label3.Text = "VehicleID:";
             // 
-            // textBox1
+            // txtInvoiceID
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(163, 86);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(213, 31);
-            this.textBox1.TabIndex = 24;
+            this.txtInvoiceID.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtInvoiceID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtInvoiceID.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInvoiceID.Location = new System.Drawing.Point(163, 86);
+            this.txtInvoiceID.Name = "txtInvoiceID";
+            this.txtInvoiceID.Size = new System.Drawing.Size(213, 31);
+            this.txtInvoiceID.TabIndex = 24;
             // 
             // label2
             // 
@@ -251,7 +255,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.dgvInvoiceDetail);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(421, 0);
@@ -259,18 +263,18 @@
             this.panel2.Size = new System.Drawing.Size(829, 745);
             this.panel2.TabIndex = 3;
             // 
-            // dataGridView1
+            // dgvInvoiceDetail
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvInvoiceDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 59);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(755, 614);
-            this.dataGridView1.TabIndex = 2;
+            this.dgvInvoiceDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInvoiceDetail.Location = new System.Drawing.Point(23, 59);
+            this.dgvInvoiceDetail.Name = "dgvInvoiceDetail";
+            this.dgvInvoiceDetail.RowHeadersWidth = 51;
+            this.dgvInvoiceDetail.RowTemplate.Height = 24;
+            this.dgvInvoiceDetail.Size = new System.Drawing.Size(755, 614);
+            this.dgvInvoiceDetail.TabIndex = 2;
             // 
             // label1
             // 
@@ -297,7 +301,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInvoiceDetail)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -305,22 +309,22 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox3;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtQuantity;
+        private Guna.UI2.WinForms.Guna2Button btnSaveInvoiceDetail;
+        private Guna.UI2.WinForms.Guna2Button btnDeleteInvoiceDetail;
+        private Guna.UI2.WinForms.Guna2Button btnUpdateInvoiceDetail;
+        private Guna.UI2.WinForms.Guna2Button btnAddInvoiceDetail;
+        private System.Windows.Forms.TextBox txtLineTotal;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtUnitPrice;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtInvoiceID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvInvoiceDetail;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtVehicleID;
     }
 }

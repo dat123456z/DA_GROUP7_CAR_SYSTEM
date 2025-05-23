@@ -93,13 +93,14 @@ namespace DA_GROUP7_CAR_SYSTEM
             this.guna2Button2.Animated = true;
             this.guna2Button2.AutoRoundedCorners = true;
             this.guna2Button2.BorderColor = System.Drawing.Color.Red;
+            this.guna2Button2.BorderRadius = 21;
             this.guna2Button2.BorderThickness = 2;
             this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button2.FillColor = System.Drawing.Color.White;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.guna2Button2.ForeColor = System.Drawing.Color.Red;
             this.guna2Button2.Location = new System.Drawing.Point(233, 409);
             this.guna2Button2.Name = "guna2Button2";
@@ -140,7 +141,9 @@ namespace DA_GROUP7_CAR_SYSTEM
             this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox2.IconLeft = global::DA_GROUP7_CAR_SYSTEM.Properties.Resources._lock;
-            this.guna2TextBox2.Location = new System.Drawing.Point(74, 329);
+            this.guna2TextBox2.IconLeftOffset = new System.Drawing.Point(6, 0);
+            this.guna2TextBox2.IconLeftSize = new System.Drawing.Size(25, 25);
+            this.guna2TextBox2.Location = new System.Drawing.Point(74, 327);
             this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2TextBox2.Name = "guna2TextBox2";
             this.guna2TextBox2.Padding = new System.Windows.Forms.Padding(5);
@@ -331,7 +334,7 @@ namespace DA_GROUP7_CAR_SYSTEM
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Padding = new System.Windows.Forms.Padding(5);
-            this.txtPassword.PlaceholderText = "password";
+            this.txtPassword.PlaceholderText = "Password";
             this.txtPassword.SelectedText = "";
             this.txtPassword.Size = new System.Drawing.Size(285, 48);
             this.txtPassword.TabIndex = 10;
@@ -353,7 +356,7 @@ namespace DA_GROUP7_CAR_SYSTEM
             this.txtLoginName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtLoginName.Name = "txtLoginName";
             this.txtLoginName.Padding = new System.Windows.Forms.Padding(5);
-            this.txtLoginName.PlaceholderText = "Login name...";
+            this.txtLoginName.PlaceholderText = "Login Name...";
             this.txtLoginName.SelectedText = "";
             this.txtLoginName.Size = new System.Drawing.Size(285, 48);
             this.txtLoginName.TabIndex = 9;

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,16 @@ namespace DA_GROUP7_CAR_SYSTEM
 {
     public partial class FormPage : Form
     {
+        //1. Khai báo biến (field) ở đầu class
+        private string projectRoot;
+        private string carImageFolder;
+
+        //2. Hàm helper để lấy đường dẫn ảnh
+        private string GetCarImagePath(string fileName)
+        {
+            return Path.Combine(carImageFolder, fileName);
+        }
+
         int cpt = 1;
         Dictionary<Control, Rectangle> originalBounds = new Dictionary<Control, Rectangle>();
         Size originalFormSize;
@@ -32,15 +43,19 @@ namespace DA_GROUP7_CAR_SYSTEM
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            projectRoot = Directory.GetParent(Application.StartupPath).Parent.Parent.FullName;
+            carImageFolder = Path.Combine(projectRoot, "Car_Audi");
+
+
             gunaDataGridView1.Rows.Add(8);
-            gunaDataGridView1.Rows[0].Cells[0].Value = Image.FromFile("Car_Audi\\1.png");
-            gunaDataGridView1.Rows[1].Cells[0].Value = Image.FromFile("Car_Audi\\2.png");
-            gunaDataGridView1.Rows[2].Cells[0].Value = Image.FromFile("Car_Audi\\3.png");
-            gunaDataGridView1.Rows[3].Cells[0].Value = Image.FromFile("Car_Audi\\4.png");
-            gunaDataGridView1.Rows[4].Cells[0].Value = Image.FromFile("Car_Audi\\5.png");
-            gunaDataGridView1.Rows[5].Cells[0].Value = Image.FromFile("Car_Audi\\6.png");
-            gunaDataGridView1.Rows[6].Cells[0].Value = Image.FromFile("Car_Audi\\7.png");
-            gunaDataGridView1.Rows[7].Cells[0].Value = Image.FromFile("Car_Audi\\8.png");
+            gunaDataGridView1.Rows[0].Cells[0].Value = Image.FromFile(GetCarImagePath("1.png"));
+            gunaDataGridView1.Rows[1].Cells[0].Value = Image.FromFile(GetCarImagePath("2.png"));
+            gunaDataGridView1.Rows[2].Cells[0].Value = Image.FromFile(GetCarImagePath("3.png"));
+            gunaDataGridView1.Rows[3].Cells[0].Value = Image.FromFile(GetCarImagePath("4.png"));
+            gunaDataGridView1.Rows[4].Cells[0].Value = Image.FromFile(GetCarImagePath("5.png"));
+            gunaDataGridView1.Rows[5].Cells[0].Value = Image.FromFile(GetCarImagePath("6.png"));
+            gunaDataGridView1.Rows[6].Cells[0].Value = Image.FromFile(GetCarImagePath("7.png"));
+            gunaDataGridView1.Rows[7].Cells[0].Value = Image.FromFile(GetCarImagePath("8.png"));
 
 
             gunaDataGridView1.Rows[0].Cells[1].Value = "Audi RS 7";
@@ -184,8 +199,8 @@ namespace DA_GROUP7_CAR_SYSTEM
                 }
 
 
-                gunaPictureBox_Car1.Load("Car_Audi\\" + cpt.ToString() + cpt.ToString() + ".png");
-                gunaPictureBox_Car2.Load("Car_Audi\\" + cpt.ToString() + cpt.ToString() + cpt.ToString() + ".png");
+                gunaPictureBox_Car1.Load(GetCarImagePath(cpt.ToString() + cpt.ToString() + ".png"));
+                gunaPictureBox_Car2.Load(GetCarImagePath(cpt.ToString() + cpt.ToString() + cpt.ToString() + ".png"));
                 gunaPictureBox_Car3.Image = gunaPictureBox_Car.Image;
             }
             else cpt = 1;
@@ -273,8 +288,8 @@ namespace DA_GROUP7_CAR_SYSTEM
                 }
 
 
-                gunaPictureBox_Car1.Load("Car_Audi\\" + cpt.ToString() + ".png");
-                gunaPictureBox_Car2.Load("Car_Audi\\" + cpt.ToString() + cpt.ToString() + cpt.ToString() + ".png");
+                gunaPictureBox_Car1.Load(GetCarImagePath(cpt.ToString() + ".png"));
+                gunaPictureBox_Car2.Load(GetCarImagePath(cpt.ToString() + cpt.ToString() + cpt.ToString() + ".png"));
                 gunaPictureBox_Car3.Image = gunaPictureBox_Car.Image;
             }
             else cpt = 1;
@@ -298,47 +313,48 @@ namespace DA_GROUP7_CAR_SYSTEM
 
         private void gunaCirclePictureBox1_Click(object sender, EventArgs e)
         {
-            gunaPictureBox_Car.Load("Car_Audi\\" + cpt.ToString() + ".png");
+            gunaPictureBox_Car.Load(GetCarImagePath(cpt.ToString() + ".png"));
 
-            gunaPictureBox_Car1.Load("Car_Audi\\" + cpt.ToString() + cpt.ToString() + ".png");
-            gunaPictureBox_Car2.Load("Car_Audi\\" + cpt.ToString() + cpt.ToString() + cpt.ToString() + ".png");
-            gunaPictureBox_Car3.Load("Car_Audi\\" + cpt.ToString() + ".png");
+            gunaPictureBox_Car1.Load(GetCarImagePath(cpt.ToString() + cpt.ToString() + ".png"));
+            gunaPictureBox_Car2.Load(GetCarImagePath(cpt.ToString() + cpt.ToString() + cpt.ToString() + ".png"));
+            gunaPictureBox_Car3.Load(GetCarImagePath(cpt.ToString() + ".png"));
+
         }
 
         private void gunaCirclePictureBox2_Click(object sender, EventArgs e)
         {
-            gunaPictureBox_Car.Load("Car_Audi\\" + cpt.ToString() + "bl.png");
+            gunaPictureBox_Car.Load(GetCarImagePath(cpt.ToString() + "bl.png"));
 
-            gunaPictureBox_Car1.Load("Car_Audi\\" + cpt.ToString() + cpt.ToString() + "bl.png");
-            gunaPictureBox_Car2.Load("Car_Audi\\" + cpt.ToString() + cpt.ToString() + cpt.ToString() + "bl.png");
-            gunaPictureBox_Car3.Load("Car_Audi\\" + cpt.ToString() + "bl.png");
+            gunaPictureBox_Car1.Load(GetCarImagePath(cpt.ToString() + cpt.ToString() + "bl.png"));
+            gunaPictureBox_Car2.Load(GetCarImagePath(cpt.ToString() + cpt.ToString() + cpt.ToString() + "bl.png"));
+            gunaPictureBox_Car3.Load(GetCarImagePath(cpt.ToString() + "bl.png"));
         }
 
         private void gunaCirclePictureBox3_Click(object sender, EventArgs e)
         {
-            gunaPictureBox_Car.Load("Car_Audi\\" + cpt.ToString() + "r.png");
+            gunaPictureBox_Car.Load(GetCarImagePath(cpt.ToString() + "r.png"));
 
-            gunaPictureBox_Car1.Load("Car_Audi\\" + cpt.ToString() + cpt.ToString() + "r.png");
-            gunaPictureBox_Car2.Load("Car_Audi\\" + cpt.ToString() + cpt.ToString() + cpt.ToString() + "r.png");
-            gunaPictureBox_Car3.Load("Car_Audi\\" + cpt.ToString() + "r.png");
+            gunaPictureBox_Car1.Load(GetCarImagePath(cpt.ToString() + cpt.ToString() + "r.png"));
+            gunaPictureBox_Car2.Load(GetCarImagePath(cpt.ToString() + cpt.ToString() + cpt.ToString() + "r.png"));
+            gunaPictureBox_Car3.Load(GetCarImagePath(cpt.ToString() + "r.png"));
         }
 
         private void gunaCirclePictureBox4_Click(object sender, EventArgs e)
         {
-            gunaPictureBox_Car.Load("Car_Audi\\" + cpt.ToString() + "g.png");
+            gunaPictureBox_Car.Load(GetCarImagePath(cpt.ToString() + "g.png"));
 
-            gunaPictureBox_Car1.Load("Car_Audi\\" + cpt.ToString() + cpt.ToString() + "g.png");
-            gunaPictureBox_Car2.Load("Car_Audi\\" + cpt.ToString() + cpt.ToString() + cpt.ToString() + "g.png");
-            gunaPictureBox_Car3.Load("Car_Audi\\" + cpt.ToString() + "g.png");
+            gunaPictureBox_Car1.Load(GetCarImagePath(cpt.ToString() + cpt.ToString() + "g.png"));
+            gunaPictureBox_Car2.Load(GetCarImagePath(cpt.ToString() + cpt.ToString() + cpt.ToString() + "g.png"));
+            gunaPictureBox_Car3.Load(GetCarImagePath(cpt.ToString() + "g.png"));
         }
 
         private void gunaCirclePictureBox5_Click(object sender, EventArgs e)
         {
-            gunaPictureBox_Car.Load("Car_Audi\\" + cpt.ToString() + "w.png");
+            gunaPictureBox_Car.Load(GetCarImagePath(cpt.ToString() + "w.png"));
 
-            gunaPictureBox_Car1.Load("Car_Audi\\" + cpt.ToString() + cpt.ToString() + "w.png");
-            gunaPictureBox_Car2.Load("Car_Audi\\" + cpt.ToString() + cpt.ToString() + cpt.ToString() + "w.png");
-            gunaPictureBox_Car3.Load("Car_Audi\\" + cpt.ToString() + "w.png");
+            gunaPictureBox_Car1.Load(GetCarImagePath(cpt.ToString() + cpt.ToString() + "w.png"));
+            gunaPictureBox_Car2.Load(GetCarImagePath(cpt.ToString() + cpt.ToString() + cpt.ToString() + "w.png"));
+            gunaPictureBox_Car3.Load(GetCarImagePath(cpt.ToString() + "w.png"));
         }
 
         private void btn_Login_Click(object sender, EventArgs e)

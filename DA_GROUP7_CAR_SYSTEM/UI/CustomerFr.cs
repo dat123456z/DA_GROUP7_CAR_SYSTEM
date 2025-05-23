@@ -25,7 +25,12 @@ namespace DA_GROUP7_CAR_SYSTEM
             txtCustomerID.Enabled = true;
             blCustomer = new BLCustomer();
             //txtCustomerID.ReadOnly = true;
+
+            if (!this.DesignMode)
+                LoadCustomerData();
+
             LoadCustomerData();
+
         }
 
         public CustomerFr(string loginName)
@@ -215,7 +220,7 @@ namespace DA_GROUP7_CAR_SYSTEM
             {
                 int oldCustomerID = Convert.ToInt32(dgvCustomer.SelectedRows[0].Cells["CustomerID"].Value);
                 int newCustomerID;
-                
+
                 if (!int.TryParse(txtCustomerID.Text, out newCustomerID))
                 {
                     MessageBox.Show("Please enter a valid Customer ID!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
