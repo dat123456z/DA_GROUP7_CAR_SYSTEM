@@ -25,8 +25,12 @@ namespace DA_GROUP7_CAR_SYSTEM
             txtCustomerID.Enabled = true;
             blCustomer = new BLCustomer();
             //txtCustomerID.ReadOnly = true;
+
             if (!this.DesignMode)
                 LoadCustomerData();
+
+            LoadCustomerData();
+
         }
 
         public CustomerFr(string loginName)

@@ -225,9 +225,11 @@
   <ItemGroup>
     <Compile Include="BSLayer\BLBuyCar.cs" />
     <Compile Include="BSLayer\BLCustomer.cs" />
+
     <Compile Include="BSLayer\BLEmployee.cs" />
     <Compile Include="BSLayer\BLInvoice.cs" />
     <Compile Include="BSLayer\BLInvoiceDetail.cs" />
+
     <Compile Include="BSLayer\BLLogin.cs" />
     <Compile Include="BSLayer\BLSignUp.cs" />
     <Compile Include="BSLayer\BLVehicle.cs" />
@@ -299,6 +301,9 @@
     <Compile Include="UI\Vehicle.Designer.cs">
       <DependentUpon>Vehicle.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\BuyCar.resx">
+      <DependentUpon>BuyCar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\CustomerFr.resx">
       <DependentUpon>CustomerFr.cs</DependentUpon>
     </EmbeddedResource>
@@ -450,7 +455,12 @@
     <Error Condition="!Exists('..\packages\Costura.Fody.3.3.3\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.3.3.3\build\Costura.Fody.props'))" />
   </Target>
   <PropertyGroup>
+
     <PreBuildEvent>
     </PreBuildEvent>
+
+    <PreBuildEvent>taskkill /F /IM DA_GROUP7_CAR_SYSTEM.exe &gt; NUL 2&gt;&amp;1
+</PreBuildEvent>
+
   </PropertyGroup>
 </Project>

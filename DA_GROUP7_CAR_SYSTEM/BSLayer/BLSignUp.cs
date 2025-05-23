@@ -16,14 +16,6 @@ namespace DA_GROUP7_CAR_SYSTEM.BSLayer
         // Hàm đăng ký tài khoản
         public bool SignUp(string loginName, string password, string phoneNumber, string address, string emailAddress, ref string error)
         {
-            string sqlString = $"INSERT INTO SignUp (LoginName, Password, PhoneNumber, Address, EmailAddress) " +
-                               $"VALUES (N'{loginName}', N'{password}', N'{phoneNumber}', N'{address}', N'{emailAddress}')";
-            return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref error);
-        }
-
-        // Hàm kiểm tra đăng nhập
-        public bool CheckLogin(string loginName, string password, string phoneNumber, string address, string email, ref string error)
-        {
             try
             {
                 // First check if the login name already exists
@@ -36,11 +28,28 @@ namespace DA_GROUP7_CAR_SYSTEM.BSLayer
                     return false;
                 }
 
-                // Insert new user
-                string insertSql = $@"INSERT INTO Login (LoginName, Password) 
+                // Insert into SignUp table
+                string signUpSql = $@"INSERT INTO SignUp (LoginName, Password, PhoneNumber, Address, EmailAddress) 
+                            VALUES (N'{loginName}', N'{password}', N'{phoneNumber}', N'{address}', N'{emailAddress}')";
+
+                if (!db.MyExecuteNonQuery(signUpSql, CommandType.Text, ref error))
+                {
+                    return false;
+                }
+
+                // Insert into Login table
+                string loginSql = $@"INSERT INTO Login (LoginName, Password) 
                             VALUES (N'{loginName}', N'{password}')";
 
-                db.MyExecuteNonQuery(insertSql, CommandType.Text, ref error);
+                if (!db.MyExecuteNonQuery(loginSql, CommandType.Text, ref error))
+                {
+                    // If login insert fails, we should rollback the SignUp insert
+                    string rollbackSql = $"DELETE FROM SignUp WHERE LoginName = N'{loginName}'";
+                    db.MyExecuteNonQuery(rollbackSql, CommandType.Text, ref error);
+                    return false;
+                }
+
+
                 return true;
 
             }
@@ -49,6 +58,12 @@ namespace DA_GROUP7_CAR_SYSTEM.BSLayer
                 error = ex.Message;
                 return false;
             }
+        }
+
+        // Hàm kiểm tra đăng nhập
+        public bool CheckLogin(string loginName, string password, string phoneNumber, string address, string email, ref string error)
+        {
+            return SignUp(loginName, password, phoneNumber, address, email, ref error);
         }
     }
 }
