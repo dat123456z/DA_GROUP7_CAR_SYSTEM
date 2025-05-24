@@ -253,11 +253,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvInvoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInvoice.Location = new System.Drawing.Point(23, 59);
+            this.dgvInvoice.Location = new System.Drawing.Point(6, 49);
             this.dgvInvoice.Name = "dgvInvoice";
             this.dgvInvoice.RowHeadersWidth = 51;
             this.dgvInvoice.RowTemplate.Height = 24;
-            this.dgvInvoice.Size = new System.Drawing.Size(755, 614);
+            this.dgvInvoice.Size = new System.Drawing.Size(755, 693);
             this.dgvInvoice.TabIndex = 2;
             // 
             // label1

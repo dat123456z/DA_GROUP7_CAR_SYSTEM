@@ -51,6 +51,10 @@
             this.btnFirst = new System.Windows.Forms.Button();
             this.dgvCustomer = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comBoxSearch = new System.Windows.Forms.ComboBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtbtnSearch = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
@@ -59,6 +63,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.txtbtnSearch);
+            this.panel1.Controls.Add(this.btnSearch);
+            this.panel1.Controls.Add(this.comBoxSearch);
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.txtAddress);
             this.panel1.Controls.Add(this.btnSaveCustomer);
             this.panel1.Controls.Add(this.btnDeleteCustomer);
@@ -100,7 +108,7 @@
             this.btnSaveCustomer.FillColor = System.Drawing.Color.DarkSeaGreen;
             this.btnSaveCustomer.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSaveCustomer.ForeColor = System.Drawing.Color.White;
-            this.btnSaveCustomer.Location = new System.Drawing.Point(232, 607);
+            this.btnSaveCustomer.Location = new System.Drawing.Point(232, 683);
             this.btnSaveCustomer.Name = "btnSaveCustomer";
             this.btnSaveCustomer.Size = new System.Drawing.Size(135, 59);
             this.btnSaveCustomer.TabIndex = 36;
@@ -118,7 +126,7 @@
             this.btnDeleteCustomer.FillColor = System.Drawing.Color.DarkSeaGreen;
             this.btnDeleteCustomer.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDeleteCustomer.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteCustomer.Location = new System.Drawing.Point(59, 607);
+            this.btnDeleteCustomer.Location = new System.Drawing.Point(59, 683);
             this.btnDeleteCustomer.Name = "btnDeleteCustomer";
             this.btnDeleteCustomer.Size = new System.Drawing.Size(135, 59);
             this.btnDeleteCustomer.TabIndex = 35;
@@ -136,7 +144,7 @@
             this.btnUpdateCustomer.FillColor = System.Drawing.Color.DarkSeaGreen;
             this.btnUpdateCustomer.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnUpdateCustomer.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateCustomer.Location = new System.Drawing.Point(232, 542);
+            this.btnUpdateCustomer.Location = new System.Drawing.Point(232, 605);
             this.btnUpdateCustomer.Name = "btnUpdateCustomer";
             this.btnUpdateCustomer.Size = new System.Drawing.Size(135, 59);
             this.btnUpdateCustomer.TabIndex = 34;
@@ -155,7 +163,7 @@
             this.btnAddCustomer.FillColor = System.Drawing.Color.DarkSeaGreen;
             this.btnAddCustomer.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAddCustomer.ForeColor = System.Drawing.Color.White;
-            this.btnAddCustomer.Location = new System.Drawing.Point(59, 542);
+            this.btnAddCustomer.Location = new System.Drawing.Point(59, 605);
             this.btnAddCustomer.Name = "btnAddCustomer";
             this.btnAddCustomer.Size = new System.Drawing.Size(135, 59);
             this.btnAddCustomer.TabIndex = 33;
@@ -337,6 +345,49 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Data Customer";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
+            this.label7.Location = new System.Drawing.Point(49, 84);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(107, 20);
+            this.label7.TabIndex = 38;
+            this.label7.Text = "Search For :";
+            // 
+            // comBoxSearch
+            // 
+            this.comBoxSearch.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
+            this.comBoxSearch.FormattingEnabled = true;
+            this.comBoxSearch.Items.AddRange(new object[] {
+            "CustomerID",
+            "Full Name",
+            "Address",
+            "PhoneNumber"});
+            this.comBoxSearch.Location = new System.Drawing.Point(206, 80);
+            this.comBoxSearch.Name = "comBoxSearch";
+            this.comBoxSearch.Size = new System.Drawing.Size(194, 28);
+            this.comBoxSearch.TabIndex = 39;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
+            this.btnSearch.Location = new System.Drawing.Point(125, 163);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(194, 37);
+            this.btnSearch.TabIndex = 40;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtbtnSearch
+            // 
+            this.txtbtnSearch.Location = new System.Drawing.Point(53, 120);
+            this.txtbtnSearch.Multiline = true;
+            this.txtbtnSearch.Name = "txtbtnSearch";
+            this.txtbtnSearch.Size = new System.Drawing.Size(347, 37);
+            this.txtbtnSearch.TabIndex = 41;
+            // 
             // CustomerFr
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -382,5 +433,9 @@
         private System.Windows.Forms.Button btnLast;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnPre;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.ComboBox comBoxSearch;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtbtnSearch;
     }
 }

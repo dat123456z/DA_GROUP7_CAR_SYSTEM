@@ -18,6 +18,7 @@ namespace DA_GROUP7_CAR_SYSTEM
         private BLCustomer blCustomer;
         private string currentLoginName;
         private DataTable allCustomers;
+        private System.Windows.Forms.TextBox txtSearch;
 
         public CustomerFr()
         {
@@ -523,6 +524,83 @@ namespace DA_GROUP7_CAR_SYSTEM
             catch (Exception ex)
             {
                 MessageBox.Show($"Error adjusting DataGridView layout: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (comBoxSearch.SelectedItem == null)
+                {
+                    MessageBox.Show("Please select a search criteria!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string searchCriteria = comBoxSearch.SelectedItem.ToString();
+                string searchValue = txtbtnSearch.Text.Trim();
+
+                if (string.IsNullOrEmpty(searchValue))
+                {
+                    // If search text is empty, show all records
+                    dgvCustomer.DataSource = allCustomers;
+                    return;
+                }
+
+                // Create a DataView to filter the data
+                DataView dv = allCustomers.DefaultView;
+                
+                // Build the filter expression based on the selected criteria
+                string filterExpression = "";
+                switch (searchCriteria)
+                {
+                    case "CustomerID":
+                        if (int.TryParse(searchValue, out int customerId))
+                        {
+                            filterExpression = $"CustomerID = {customerId}";
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please enter a valid Customer ID number!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                        break;
+                    case "Full Name":
+                        filterExpression = $"FullName LIKE '%{searchValue}%'";
+                        break;
+                    case "Address":
+                        filterExpression = $"Address LIKE '%{searchValue}%'";
+                        break;
+                    case "PhoneNumber":
+                        filterExpression = $"PhoneNumber LIKE '%{searchValue}%'";
+                        break;
+                    case "Email":
+                        filterExpression = $"Email LIKE '%{searchValue}%'";
+                        break;
+                    default:
+                        MessageBox.Show("Invalid search criteria!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                }
+
+                // Apply the filter
+                dv.RowFilter = filterExpression;
+                dgvCustomer.DataSource = dv;
+
+                // If no results found, show message
+                if (dv.Count == 0)
+                {
+                    MessageBox.Show("No matching records found!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Optionally, reset to show all records after the message if no results found
+                    // dv.RowFilter = ""; 
+                    // dgvCustomer.DataSource = allCustomers; // Assign original data source
+                } 
+                // Always update the DataSource with the filtered DataView, even if empty, to show no results
+                dgvCustomer.DataSource = dv;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error performing search: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
