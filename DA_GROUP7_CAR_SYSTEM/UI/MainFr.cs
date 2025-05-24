@@ -16,6 +16,7 @@ namespace DA_GROUP7_CAR_SYSTEM
         {
             InitializeComponent();
             customizeDesing();
+            this.WindowState = FormWindowState.Maximized;
         }
         private Form activeForm = null;
 
@@ -132,6 +133,33 @@ namespace DA_GROUP7_CAR_SYSTEM
             showSubMenu(panel4);
         }
 
-        
+        private void guna2Button11_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
+        }
+
+        private void btnEmployeeChar_Click(object sender, EventArgs e)
+        {
+            openChildForm(new EmployeeChart());
+        }
+
+        private void btnColorVehicle_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ColorVehicleChart());
+        }
+
+        private void btnBrandChart_Click(object sender, EventArgs e)
+        {
+            openChildForm(new BrandVehicleChart());
+        }
     }
 }

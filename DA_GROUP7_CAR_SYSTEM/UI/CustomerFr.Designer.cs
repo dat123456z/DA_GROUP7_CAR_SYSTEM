@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace DA_GROUP7_CAR_SYSTEM
+﻿namespace DA_GROUP7_CAR_SYSTEM
 {
     partial class CustomerFr
     {
@@ -31,10 +29,6 @@ namespace DA_GROUP7_CAR_SYSTEM
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-
-            this.txtCustomerID = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.btnSaveCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.btnDeleteCustomer = new Guna.UI2.WinForms.Guna2Button();
@@ -47,11 +41,14 @@ namespace DA_GROUP7_CAR_SYSTEM
             this.label4 = new System.Windows.Forms.Label();
             this.txtFullName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-
             this.txtCustomerID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-
             this.panel2 = new System.Windows.Forms.Panel();
+            this.labelText = new System.Windows.Forms.Label();
+            this.btnLast = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.btnPre = new System.Windows.Forms.Button();
+            this.btnFirst = new System.Windows.Forms.Button();
             this.dgvCustomer = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -62,10 +59,6 @@ namespace DA_GROUP7_CAR_SYSTEM
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-
-            this.panel1.Controls.Add(this.txtCustomerID);
-            this.panel1.Controls.Add(this.label2);
-
             this.panel1.Controls.Add(this.txtAddress);
             this.panel1.Controls.Add(this.btnSaveCustomer);
             this.panel1.Controls.Add(this.btnDeleteCustomer);
@@ -78,50 +71,20 @@ namespace DA_GROUP7_CAR_SYSTEM
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txtFullName);
             this.panel1.Controls.Add(this.label3);
-
             this.panel1.Controls.Add(this.txtCustomerID);
             this.panel1.Controls.Add(this.label2);
-
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(421, 745);
             this.panel1.TabIndex = 0;
             // 
-
-            // txtCustomerID
-            // 
-            this.txtCustomerID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCustomerID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCustomerID.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerID.Location = new System.Drawing.Point(179, 120);
-            this.txtCustomerID.Name = "txtCustomerID";
-            this.txtCustomerID.ReadOnly = true;
-            this.txtCustomerID.Size = new System.Drawing.Size(213, 31);
-            this.txtCustomerID.TabIndex = 24;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(21, 125);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 20);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "Customer ID:";
-            // 
-
             // txtAddress
             // 
             this.txtAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAddress.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
             this.txtAddress.Location = new System.Drawing.Point(166, 330);
-
-            this.txtAddress.Location = new System.Drawing.Point(179, 232);
-
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(213, 31);
             this.txtAddress.TabIndex = 37;
@@ -137,11 +100,7 @@ namespace DA_GROUP7_CAR_SYSTEM
             this.btnSaveCustomer.FillColor = System.Drawing.Color.DarkSeaGreen;
             this.btnSaveCustomer.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSaveCustomer.ForeColor = System.Drawing.Color.White;
-
             this.btnSaveCustomer.Location = new System.Drawing.Point(232, 607);
-
-            this.btnSaveCustomer.Location = new System.Drawing.Point(232, 508);
-
             this.btnSaveCustomer.Name = "btnSaveCustomer";
             this.btnSaveCustomer.Size = new System.Drawing.Size(135, 59);
             this.btnSaveCustomer.TabIndex = 36;
@@ -159,11 +118,7 @@ namespace DA_GROUP7_CAR_SYSTEM
             this.btnDeleteCustomer.FillColor = System.Drawing.Color.DarkSeaGreen;
             this.btnDeleteCustomer.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDeleteCustomer.ForeColor = System.Drawing.Color.White;
-
             this.btnDeleteCustomer.Location = new System.Drawing.Point(59, 607);
-
-            this.btnDeleteCustomer.Location = new System.Drawing.Point(48, 508);
-
             this.btnDeleteCustomer.Name = "btnDeleteCustomer";
             this.btnDeleteCustomer.Size = new System.Drawing.Size(135, 59);
             this.btnDeleteCustomer.TabIndex = 35;
@@ -181,11 +136,7 @@ namespace DA_GROUP7_CAR_SYSTEM
             this.btnUpdateCustomer.FillColor = System.Drawing.Color.DarkSeaGreen;
             this.btnUpdateCustomer.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnUpdateCustomer.ForeColor = System.Drawing.Color.White;
-
             this.btnUpdateCustomer.Location = new System.Drawing.Point(232, 542);
-
-            this.btnUpdateCustomer.Location = new System.Drawing.Point(232, 405);
-
             this.btnUpdateCustomer.Name = "btnUpdateCustomer";
             this.btnUpdateCustomer.Size = new System.Drawing.Size(135, 59);
             this.btnUpdateCustomer.TabIndex = 34;
@@ -204,11 +155,7 @@ namespace DA_GROUP7_CAR_SYSTEM
             this.btnAddCustomer.FillColor = System.Drawing.Color.DarkSeaGreen;
             this.btnAddCustomer.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAddCustomer.ForeColor = System.Drawing.Color.White;
-
             this.btnAddCustomer.Location = new System.Drawing.Point(59, 542);
-
-            this.btnAddCustomer.Location = new System.Drawing.Point(48, 405);
-
             this.btnAddCustomer.Name = "btnAddCustomer";
             this.btnAddCustomer.Size = new System.Drawing.Size(135, 59);
             this.btnAddCustomer.TabIndex = 33;
@@ -220,11 +167,7 @@ namespace DA_GROUP7_CAR_SYSTEM
             this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEmail.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
             this.txtEmail.Location = new System.Drawing.Point(170, 461);
-
-            this.txtEmail.Location = new System.Drawing.Point(179, 333);
-
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(213, 31);
             this.txtEmail.TabIndex = 31;
@@ -234,7 +177,7 @@ namespace DA_GROUP7_CAR_SYSTEM
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(91, 344);
+            this.label6.Location = new System.Drawing.Point(92, 466);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 20);
             this.label6.TabIndex = 30;
@@ -245,11 +188,7 @@ namespace DA_GROUP7_CAR_SYSTEM
             this.txtPhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPhoneNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPhoneNumber.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
             this.txtPhoneNumber.Location = new System.Drawing.Point(170, 397);
-
-            this.txtPhoneNumber.Location = new System.Drawing.Point(179, 278);
-
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(213, 31);
             this.txtPhoneNumber.TabIndex = 29;
@@ -259,7 +198,7 @@ namespace DA_GROUP7_CAR_SYSTEM
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(21, 289);
+            this.label5.Location = new System.Drawing.Point(22, 402);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(135, 20);
             this.label5.TabIndex = 28;
@@ -270,7 +209,7 @@ namespace DA_GROUP7_CAR_SYSTEM
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(74, 237);
+            this.label4.Location = new System.Drawing.Point(77, 335);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 20);
             this.label4.TabIndex = 27;
@@ -281,11 +220,7 @@ namespace DA_GROUP7_CAR_SYSTEM
             this.txtFullName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFullName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFullName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
             this.txtFullName.Location = new System.Drawing.Point(170, 270);
-
-            this.txtFullName.Location = new System.Drawing.Point(179, 180);
-
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.Size = new System.Drawing.Size(213, 31);
             this.txtFullName.TabIndex = 26;
@@ -295,13 +230,12 @@ namespace DA_GROUP7_CAR_SYSTEM
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(10, 185);
+            this.label3.Location = new System.Drawing.Point(10, 275);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(146, 20);
             this.label3.TabIndex = 25;
             this.label3.Text = "Customer Name:";
             // 
-
             // txtCustomerID
             // 
             this.txtCustomerID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -323,10 +257,14 @@ namespace DA_GROUP7_CAR_SYSTEM
             this.label2.TabIndex = 23;
             this.label2.Text = "CustomerID:";
             // 
-
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.labelText);
+            this.panel2.Controls.Add(this.btnLast);
+            this.panel2.Controls.Add(this.btnNext);
+            this.panel2.Controls.Add(this.btnPre);
+            this.panel2.Controls.Add(this.btnFirst);
             this.panel2.Controls.Add(this.dgvCustomer);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -335,29 +273,59 @@ namespace DA_GROUP7_CAR_SYSTEM
             this.panel2.Size = new System.Drawing.Size(829, 745);
             this.panel2.TabIndex = 1;
             // 
+            // labelText
+            // 
+            this.labelText.Location = new System.Drawing.Point(0, 0);
+            this.labelText.Name = "labelText";
+            this.labelText.Size = new System.Drawing.Size(100, 23);
+            this.labelText.TabIndex = 0;
+            // 
+            // btnLast
+            // 
+            this.btnLast.Location = new System.Drawing.Point(0, 0);
+            this.btnLast.Name = "btnLast";
+            this.btnLast.Size = new System.Drawing.Size(75, 23);
+            this.btnLast.TabIndex = 1;
+            // 
+            // btnNext
+            // 
+            this.btnNext.Location = new System.Drawing.Point(0, 0);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(75, 23);
+            this.btnNext.TabIndex = 2;
+            // 
+            // btnPre
+            // 
+            this.btnPre.Location = new System.Drawing.Point(0, 0);
+            this.btnPre.Name = "btnPre";
+            this.btnPre.Size = new System.Drawing.Size(75, 23);
+            this.btnPre.TabIndex = 3;
+            // 
+            // btnFirst
+            // 
+            this.btnFirst.Location = new System.Drawing.Point(0, 0);
+            this.btnFirst.Name = "btnFirst";
+            this.btnFirst.Size = new System.Drawing.Size(75, 23);
+            this.btnFirst.TabIndex = 4;
+            // 
             // dgvCustomer
             // 
-
+            this.dgvCustomer.AllowUserToResizeColumns = false;
+            this.dgvCustomer.AllowUserToResizeRows = false;
             this.dgvCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCustomer.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvCustomer.ColumnHeadersHeight = 29;
+            this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCustomer.Location = new System.Drawing.Point(23, 59);
             this.dgvCustomer.Name = "dgvCustomer";
             this.dgvCustomer.RowHeadersWidth = 51;
+            this.dgvCustomer.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvCustomer.RowTemplate.Height = 24;
-            this.dgvCustomer.Size = new System.Drawing.Size(755, 614);
+            this.dgvCustomer.Size = new System.Drawing.Size(755, 946);
             this.dgvCustomer.TabIndex = 2;
-
-            this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCustomer.Location = new System.Drawing.Point(0, 0);
-            this.dgvCustomer.Name = "dgvCustomer";
-            this.dgvCustomer.RowHeadersWidth = 51;
-            this.dgvCustomer.RowTemplate.Height = 24;
-            this.dgvCustomer.Size = new System.Drawing.Size(829, 745);
-            this.dgvCustomer.TabIndex = 3;
-
             // 
             // label1
             // 
@@ -389,11 +357,6 @@ namespace DA_GROUP7_CAR_SYSTEM
 
         }
 
-        private void BtnUpdateCustomer_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
         #endregion
 
         private System.Windows.Forms.Panel panel1;
@@ -410,16 +373,14 @@ namespace DA_GROUP7_CAR_SYSTEM
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtFullName;
         private System.Windows.Forms.Label label3;
-
         private System.Windows.Forms.TextBox txtCustomerID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvCustomer;
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvCustomer;
-        private System.Windows.Forms.TextBox txtCustomerID;
-        private System.Windows.Forms.Label label2;
-
+        private System.Windows.Forms.Button btnFirst;
+        private System.Windows.Forms.Label labelText;
+        private System.Windows.Forms.Button btnLast;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Button btnPre;
     }
 }

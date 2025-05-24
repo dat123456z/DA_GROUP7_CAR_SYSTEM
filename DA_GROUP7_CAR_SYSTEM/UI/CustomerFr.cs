@@ -15,41 +15,177 @@ namespace DA_GROUP7_CAR_SYSTEM
 {
     public partial class CustomerFr : Form
     {
-        BLCustomer blCustomer = null;
+        private BLCustomer blCustomer;
         private string currentLoginName;
+        private DataTable allCustomers;
 
         public CustomerFr()
         {
-            InitializeComponent();
-            txtCustomerID.ReadOnly = false;
-            txtCustomerID.Enabled = true;
-            blCustomer = new BLCustomer();
-            //txtCustomerID.ReadOnly = true;
+            try
+            {
+                InitializeComponent();
+                blCustomer = new BLCustomer();
 
-            if (!this.DesignMode)
-                LoadCustomerData();
+                // Ensure dgvCustomer is initialized and configure it early
+                if (dgvCustomer != null)
+                {
+                    dgvCustomer.AutoGenerateColumns = false;
+                    dgvCustomer.AllowUserToAddRows = false;
+                    dgvCustomer.AllowUserToDeleteRows = false;
+                    dgvCustomer.ReadOnly = true;
+                    dgvCustomer.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                    dgvCustomer.MultiSelect = false;
+                    
+                    // Apply layout settings
+                    dgvCustomer.Dock = DockStyle.None;
+                    dgvCustomer.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+                    dgvCustomer.AllowUserToResizeColumns = true;
+                    dgvCustomer.AllowUserToResizeRows = true;
+                    dgvCustomer.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+                    dgvCustomer.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+                    dgvCustomer.ScrollBars = ScrollBars.Both;
+                    dgvCustomer.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                    dgvCustomer.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
-            LoadCustomerData();
+                    // Add columns
+                    dgvCustomer.Columns.Add(new DataGridViewTextBoxColumn
+                    {
+                        Name = "CustomerID",
+                        HeaderText = "Customer ID",
+                        DataPropertyName = "CustomerID",
+                        Width = 80
+                    });
 
+                    dgvCustomer.Columns.Add(new DataGridViewTextBoxColumn
+                    {
+                        Name = "FullName",
+                        HeaderText = "Full Name",
+                        DataPropertyName = "FullName",
+                        AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+                    });
+
+                    dgvCustomer.Columns.Add(new DataGridViewTextBoxColumn
+                    {
+                        Name = "Address",
+                        HeaderText = "Address",
+                        DataPropertyName = "Address",
+                        AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+                    });
+
+                    dgvCustomer.Columns.Add(new DataGridViewTextBoxColumn
+                    {
+                        Name = "PhoneNumber",
+                        HeaderText = "Phone Number",
+                        DataPropertyName = "PhoneNumber",
+                        AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+                    });
+
+                    dgvCustomer.Columns.Add(new DataGridViewTextBoxColumn
+                    {
+                        Name = "Email",
+                        HeaderText = "Email",
+                        DataPropertyName = "Email",
+                        AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+                    });
+                }
+
+                if (!this.DesignMode)
+                {
+                    LoadCustomerData();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error initializing form: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public CustomerFr(string loginName)
         {
-            InitializeComponent();
-            txtCustomerID.ReadOnly = false;
-            txtCustomerID.Enabled = true;
-            blCustomer = new BLCustomer();
-            //txtCustomerID.ReadOnly = true;
-            currentLoginName = loginName;
-            LoadCustomerData();
-            LoadCustomerInfoByLogin();
+            try
+            {
+                InitializeComponent();
+                blCustomer = new BLCustomer();
+                currentLoginName = loginName;
+
+                // Ensure dgvCustomer is initialized and configure it early
+                if (dgvCustomer != null)
+                {
+                    dgvCustomer.AutoGenerateColumns = false;
+                    dgvCustomer.AllowUserToAddRows = false;
+                    dgvCustomer.AllowUserToDeleteRows = false;
+                    dgvCustomer.ReadOnly = true;
+                    dgvCustomer.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                    dgvCustomer.MultiSelect = false;
+
+                    // Apply layout settings
+                    dgvCustomer.Dock = DockStyle.None;
+                    dgvCustomer.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+                    dgvCustomer.AllowUserToResizeColumns = true;
+                    dgvCustomer.AllowUserToResizeRows = true;
+                    dgvCustomer.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+                    dgvCustomer.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+                    dgvCustomer.ScrollBars = ScrollBars.Both;
+                    dgvCustomer.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                    dgvCustomer.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
+                    // Add columns
+                    dgvCustomer.Columns.Add(new DataGridViewTextBoxColumn
+                    {
+                        Name = "CustomerID",
+                        HeaderText = "Customer ID",
+                        DataPropertyName = "CustomerID",
+                        Width = 80
+                    });
+
+                    dgvCustomer.Columns.Add(new DataGridViewTextBoxColumn
+                    {
+                        Name = "FullName",
+                        HeaderText = "Full Name",
+                        DataPropertyName = "FullName",
+                        AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+                    });
+
+                    dgvCustomer.Columns.Add(new DataGridViewTextBoxColumn
+                    {
+                        Name = "Address",
+                        HeaderText = "Address",
+                        DataPropertyName = "Address",
+                        AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+                    });
+
+                    dgvCustomer.Columns.Add(new DataGridViewTextBoxColumn
+                    {
+                        Name = "PhoneNumber",
+                        HeaderText = "Phone Number",
+                        DataPropertyName = "PhoneNumber",
+                        AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+                    });
+
+                    dgvCustomer.Columns.Add(new DataGridViewTextBoxColumn
+                    {
+                        Name = "Email",
+                        HeaderText = "Email",
+                        DataPropertyName = "Email",
+                        AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+                    });
+                }
+
+                LoadCustomerData();
+                LoadCustomerInfoByLogin();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error initializing form: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void LoadCustomerInfoByLogin()
         {
             try
             {
-                string error = "";
+                if (string.IsNullOrEmpty(currentLoginName)) return;
+
                 string sql = $@"SELECT c.* 
                               FROM Customer c
                               INNER JOIN SignUp s ON c.FullName = s.FullName
@@ -62,16 +198,16 @@ namespace DA_GROUP7_CAR_SYSTEM
                 if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
                 {
                     DataRow row = ds.Tables[0].Rows[0];
-                    txtCustomerID.Text = row["CustomerID"].ToString();
-                    txtFullName.Text = row["FullName"].ToString();
-                    txtAddress.Text = row["Address"].ToString();
-                    txtPhoneNumber.Text = row["PhoneNumber"].ToString();
-                    txtEmail.Text = row["Email"].ToString();
+                    if (txtCustomerID != null) txtCustomerID.Text = row["CustomerID"].ToString();
+                    if (txtFullName != null) txtFullName.Text = row["FullName"].ToString();
+                    if (txtAddress != null) txtAddress.Text = row["Address"].ToString();
+                    if (txtPhoneNumber != null) txtPhoneNumber.Text = row["PhoneNumber"].ToString();
+                    if (txtEmail != null) txtEmail.Text = row["Email"].ToString();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading customer data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error loading customer data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -79,27 +215,21 @@ namespace DA_GROUP7_CAR_SYSTEM
         {
             try
             {
+                if (blCustomer == null)
+                {
+                    blCustomer = new BLCustomer();
+                }
+
                 DataSet ds = blCustomer.GetCustomers();
-                DataTable dt = ds.Tables[0];
-
-                dgvCustomer.DataSource = dt;
-
-                // Đảm bảo DataSource đã gán xong mới set Width
-                if (dgvCustomer.Columns["FullName"] != null)
-                    dgvCustomer.Columns["FullName"].Width = 150;
-                if (dgvCustomer.Columns["Address"] != null)
-                    dgvCustomer.Columns["Address"].Width = 200;
-                if (dgvCustomer.Columns["PhoneNumber"] != null)
-                    dgvCustomer.Columns["PhoneNumber"].Width = 100;
-                if (dgvCustomer.Columns["Email"] != null)
-                    dgvCustomer.Columns["Email"].Width = 180;
-
-                dgvCustomer.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
-                dgvCustomer.AllowUserToResizeColumns = true;
+                if (ds != null && ds.Tables.Count > 0)
+                {
+                    allCustomers = ds.Tables[0];
+                    dgvCustomer.DataSource = allCustomers;
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading customer data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error loading customer data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -164,7 +294,7 @@ namespace DA_GROUP7_CAR_SYSTEM
 
             string error = "";
             string sql = $@"INSERT INTO Customer (CustomerID,FullName, Address, PhoneNumber, Email)
-                           VALUES (N'{txtCustomerID.Text}',N'{txtFullName.Text}', N'{txtAddress.Text}', N'{txtPhoneNumber.Text}', N'{txtEmail.Text}')";
+                           VALUES (N'{(txtCustomerID != null ? txtCustomerID.Text : string.Empty)}',N'{(txtFullName != null ? txtFullName.Text : string.Empty)}', N'{(txtAddress != null ? txtAddress.Text : string.Empty)}', N'{(txtPhoneNumber != null ? txtPhoneNumber.Text : string.Empty)}', N'{(txtEmail != null ? txtEmail.Text : string.Empty)}')";
 
             DBMain db = new DBMain();
             if (db.MyExecuteNonQuery(sql, CommandType.Text, ref error))
@@ -181,13 +311,20 @@ namespace DA_GROUP7_CAR_SYSTEM
 
         private void btnDeleteCustomer_Click(object sender, EventArgs e)
         {
-            if (dgvCustomer.SelectedRows.Count > 0)
+            if (dgvCustomer != null && dgvCustomer.SelectedRows.Count > 0)
             {
                 var result = MessageBox.Show("Are you sure you want to delete this customer?", "Confirm Delete",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
                 {
+                    // Ensure cell value is not null before conversion
+                    if (dgvCustomer.SelectedRows[0].Cells["CustomerID"].Value == null)
+                    {
+                        MessageBox.Show("Cannot delete: Customer ID is missing.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
                     int customerID = Convert.ToInt32(dgvCustomer.SelectedRows[0].Cells["CustomerID"].Value);
                     string error = "";
                     string sql = $@"DELETE FROM Customer WHERE CustomerID = {customerID}";
@@ -216,12 +353,18 @@ namespace DA_GROUP7_CAR_SYSTEM
             if (!ValidateInputs())
                 return;
 
-            if (dgvCustomer.SelectedRows.Count > 0)
+            if (dgvCustomer != null && dgvCustomer.SelectedRows.Count > 0)
             {
+                // Ensure cell value is not null before conversion
+                 if (dgvCustomer.SelectedRows[0].Cells["CustomerID"].Value == null)
+                    {
+                        MessageBox.Show("Cannot update: Original Customer ID is missing.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                 int oldCustomerID = Convert.ToInt32(dgvCustomer.SelectedRows[0].Cells["CustomerID"].Value);
                 int newCustomerID;
 
-                if (!int.TryParse(txtCustomerID.Text, out newCustomerID))
+                if (txtCustomerID == null || !int.TryParse(txtCustomerID.Text, out newCustomerID))
                 {
                     MessageBox.Show("Please enter a valid Customer ID!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -230,10 +373,10 @@ namespace DA_GROUP7_CAR_SYSTEM
                 string error = "";
                 string sql = $@"UPDATE Customer 
                               SET CustomerID = {newCustomerID},
-                                  FullName = N'{txtFullName.Text}',
-                                  Address = N'{txtAddress.Text}',
-                                  PhoneNumber = N'{txtPhoneNumber.Text}',
-                                  Email = N'{txtEmail.Text}'
+                                  FullName = N'{(txtFullName != null ? txtFullName.Text : string.Empty)}',
+                                  Address = N'{(txtAddress != null ? txtAddress.Text : string.Empty)}',
+                                  PhoneNumber = N'{(txtPhoneNumber != null ? txtPhoneNumber.Text : string.Empty)}',
+                                  Email = N'{(txtEmail != null ? txtEmail.Text : string.Empty)}'
                               WHERE CustomerID = {oldCustomerID}";
 
                 DBMain db = new DBMain();
@@ -256,46 +399,130 @@ namespace DA_GROUP7_CAR_SYSTEM
 
         private void ClearInputs()
         {
-            txtFullName.Clear();
-            txtAddress.Clear();
-            txtPhoneNumber.Clear();
-            txtEmail.Clear();
-            txtCustomerID.Clear();
+            if (txtFullName != null) txtFullName.Clear();
+            if (txtAddress != null) txtAddress.Clear();
+            if (txtPhoneNumber != null) txtPhoneNumber.Clear();
+            if (txtEmail != null) txtEmail.Clear();
+            if (txtCustomerID != null) txtCustomerID.Clear();
         }
 
         private void dgvCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex >= 0 && dgvCustomer != null && dgvCustomer.Rows.Count > e.RowIndex)
             {
                 DataGridViewRow row = dgvCustomer.Rows[e.RowIndex];
-                // Ensure column names match your DataTable/DataGridView
-                if (dgvCustomer.Columns.Contains("CustomerID"))
-                    txtCustomerID.Text = row.Cells["CustomerID"].Value?.ToString() ?? "";
-                if (dgvCustomer.Columns.Contains("FullName"))
-                    txtFullName.Text = row.Cells["FullName"].Value?.ToString() ?? "";
-                if (dgvCustomer.Columns.Contains("Address"))
-                    txtAddress.Text = row.Cells["Address"].Value?.ToString() ?? "";
-                if (dgvCustomer.Columns.Contains("PhoneNumber"))
-                    txtPhoneNumber.Text = row.Cells["PhoneNumber"].Value?.ToString() ?? "";
-                if (dgvCustomer.Columns.Contains("Email"))
-                    txtEmail.Text = row.Cells["Email"].Value?.ToString() ?? "";
+                // Ensure column names match your DataTable/DataGridView and cells are not null
+                if (dgvCustomer.Columns != null && row.Cells != null)
+                {
+                    if (dgvCustomer.Columns.Contains("CustomerID") && row.Cells["CustomerID"].Value != null)
+                        if (txtCustomerID != null) txtCustomerID.Text = row.Cells["CustomerID"].Value.ToString() ?? "";
+                    if (dgvCustomer.Columns.Contains("FullName") && row.Cells["FullName"].Value != null)
+                        if (txtFullName != null) txtFullName.Text = row.Cells["FullName"].Value.ToString() ?? "";
+                    if (dgvCustomer.Columns.Contains("Address") && row.Cells["Address"].Value != null)
+                        if (txtAddress != null) txtAddress.Text = row.Cells["Address"].Value.ToString() ?? "";
+                    if (dgvCustomer.Columns.Contains("PhoneNumber") && row.Cells["PhoneNumber"].Value != null)
+                        if (txtPhoneNumber != null) txtPhoneNumber.Text = row.Cells["PhoneNumber"].Value.ToString() ?? "";
+                    if (dgvCustomer.Columns.Contains("Email") && row.Cells["Email"].Value != null)
+                        if (txtEmail != null) txtEmail.Text = row.Cells["Email"].Value.ToString() ?? "";
+                }
             }
         }
 
         private void btnUpdateCustomer_Click(object sender, EventArgs e)
         {
-            if (dgvCustomer.SelectedRows.Count > 0)
+            if (dgvCustomer != null && dgvCustomer.SelectedRows.Count > 0)
             {
                 DataGridViewRow row = dgvCustomer.SelectedRows[0];
-                txtCustomerID.Text = row.Cells["CustomerID"].Value?.ToString() ?? "";
-                txtFullName.Text = row.Cells["FullName"].Value?.ToString() ?? "";
-                txtAddress.Text = row.Cells["Address"].Value?.ToString() ?? "";
-                txtPhoneNumber.Text = row.Cells["PhoneNumber"].Value?.ToString() ?? "";
-                txtEmail.Text = row.Cells["Email"].Value?.ToString() ?? "";
+                 if (dgvCustomer.Columns != null && row.Cells != null)
+                {
+                    if (dgvCustomer.Columns.Contains("CustomerID") && row.Cells["CustomerID"].Value != null)
+                       if (txtCustomerID != null) txtCustomerID.Text = row.Cells["CustomerID"].Value.ToString() ?? "";
+                    if (dgvCustomer.Columns.Contains("FullName") && row.Cells["FullName"].Value != null)
+                       if (txtFullName != null) txtFullName.Text = row.Cells["FullName"].Value.ToString() ?? "";
+                    if (dgvCustomer.Columns.Contains("Address") && row.Cells["Address"].Value != null)
+                       if (txtAddress != null) txtAddress.Text = row.Cells["Address"].Value.ToString() ?? "";
+                    if (dgvCustomer.Columns.Contains("PhoneNumber") && row.Cells["PhoneNumber"].Value != null)
+                       if (txtPhoneNumber != null) txtPhoneNumber.Text = row.Cells["PhoneNumber"].Value.ToString() ?? "";
+                    if (dgvCustomer.Columns.Contains("Email") && row.Cells["Email"].Value != null)
+                       if (txtEmail != null) txtEmail.Text = row.Cells["Email"].Value.ToString() ?? "";
+                }
             }
             else
             {
                 MessageBox.Show("Vui lòng chọn một khách hàng để cập nhật!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void dgvCustomer_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            try
+            {
+                // Đặt tỷ lệ chiều rộng các cột
+                if (dgvCustomer.Columns.Count >= 5)
+                {
+                    dgvCustomer.Columns["Customer ID"].Width = 80;  // Cột ID nhỏ hơn
+                    dgvCustomer.Columns["Full Name"].Width = 150;
+                    dgvCustomer.Columns["Address"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    dgvCustomer.Columns["Phone Number"].Width = 120;
+                    dgvCustomer.Columns["Email"].Width = 180;
+                }
+
+                // Cho phép xuống dòng
+                dgvCustomer.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error configuring columns after data binding: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+            // Adjust layout when the form is resized
+            AdjustDataGridViewLayout();
+        }
+
+        private void AdjustDataGridViewLayout()
+        {
+            try
+            {
+                // Ensure dgvCustomer and its columns are ready
+                if (dgvCustomer == null || dgvCustomer.Columns == null || dgvCustomer.Columns.Count == 0) return;
+
+                // Apply layout settings
+                dgvCustomer.Dock = DockStyle.None;
+                dgvCustomer.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right; // Keep Bottom anchor for resizing
+                dgvCustomer.AllowUserToResizeColumns = true;
+                dgvCustomer.AllowUserToResizeRows = true;
+                dgvCustomer.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+                dgvCustomer.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+                dgvCustomer.ScrollBars = ScrollBars.Both;
+                dgvCustomer.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                dgvCustomer.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
+                // Manually set column widths/AutoSizeMode
+                if (dgvCustomer.Columns.Contains("CustomerID"))
+                {
+                    dgvCustomer.Columns["CustomerID"].Width = 120; // Set a specific width
+                    dgvCustomer.Columns["CustomerID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                }
+
+                if (dgvCustomer.Columns.Contains("FullName"))
+                    dgvCustomer.Columns["FullName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                if (dgvCustomer.Columns.Contains("Address"))
+                    dgvCustomer.Columns["Address"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                if (dgvCustomer.Columns.Contains("PhoneNumber"))
+                    dgvCustomer.Columns["PhoneNumber"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                if (dgvCustomer.Columns.Contains("Email"))
+                    dgvCustomer.Columns["Email"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+                dgvCustomer.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvCustomer.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error adjusting DataGridView layout: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

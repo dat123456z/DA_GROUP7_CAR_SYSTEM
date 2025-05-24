@@ -57,7 +57,7 @@ namespace DA_GROUP7_CAR_SYSTEM
             string phone = txtPhoneNumber.Text.Trim();
             if (!System.Text.RegularExpressions.Regex.IsMatch(phone, @"^0\d{9}$"))
             {
-                errorField = "Phone Number (phải có 10 chữ số và bắt đầu bằng 0)";
+                errorField = "Phone Number (must be 10 digits and start with 0)";
                 return false;
             }
 
@@ -65,7 +65,7 @@ namespace DA_GROUP7_CAR_SYSTEM
             string email = txtEmail.Text.Trim().ToLower();
             if (!email.EndsWith("@gmail.com"))
             {
-                errorField = "Email (phải kết thúc bằng @gmail.com)";
+                errorField = "Email (must end with @gmail.com)";
                 return false;
             }
 
@@ -77,7 +77,7 @@ namespace DA_GROUP7_CAR_SYSTEM
         {
             if (!ValidateEmployeeInputs(out string errorField))
             {
-                MessageBox.Show($"Vui lòng nhập đúng thông tin trường: {errorField}", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Please enter the correct information for the field: {errorField}", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -88,7 +88,7 @@ namespace DA_GROUP7_CAR_SYSTEM
 
             if (count > 0)
             {
-                MessageBox.Show("Employee ID đã tồn tại. Vui lòng nhập ID khác.", "Trùng ID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Employee ID already exists. Please enter a different ID.", "Duplicate ID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -99,13 +99,13 @@ namespace DA_GROUP7_CAR_SYSTEM
             string error = "";
             if (db.MyExecuteNonQuery(sql, CommandType.Text, ref error))
             {
-                MessageBox.Show("Thêm nhân viên thành công!");
+                MessageBox.Show("Add employee successfully!");
                 LoadEmployeeData();
                 ClearInputs();
             }
             else
             {
-                MessageBox.Show("Lỗi: " + error);
+                MessageBox.Show("Error: " + error);
             }
         }
 
@@ -113,13 +113,13 @@ namespace DA_GROUP7_CAR_SYSTEM
         {
             if (dgvEmployee.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Vui lòng chọn nhân viên để cập nhật!");
+                MessageBox.Show("Please select an employee to update!");
                 return;
             }
 
             if (!ValidateEmployeeInputs(out string errorField))
             {
-                MessageBox.Show($"Vui lòng nhập đúng thông tin trường: {errorField}", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Please enter the correct information for the field: {errorField}", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 

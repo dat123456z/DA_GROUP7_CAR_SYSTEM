@@ -14,13 +14,58 @@ namespace DA_GROUP7_CAR_SYSTEM
             InitializeComponent();
             if (!this.DesignMode)
                 LoadInvoiceData();
+
+            // Attach DataBindingComplete event handler
+            dgvInvoice.DataBindingComplete += dgvInvoice_DataBindingComplete;
         }
 
         private void LoadInvoiceData()
         {
-            string sql = "SELECT * FROM Invoice";
-            DataSet ds = db.ExecuteQueryDataSet(sql, CommandType.Text);
-            dgvInvoice.DataSource = ds.Tables[0];
+            try
+            {
+                string sql = "SELECT * FROM Invoice";
+                DataSet ds = db.ExecuteQueryDataSet(sql, CommandType.Text);
+                dgvInvoice.DataSource = ds.Tables[0];
+
+                // Set the DataGridView to fill its container
+                dgvInvoice.Dock = DockStyle.Fill;
+
+                // Ensure the DataGridView stays within its container
+                dgvInvoice.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+
+                // Column configuration will be done in DataBindingComplete event
+            }
+            catch (Exception ex)
+            {
+                 MessageBox.Show("Error loading invoice data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dgvInvoice_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            try
+            {
+                // Configure column widths and sizing after data binding is complete
+                //if (dgvInvoice.Columns.Contains("InvoiceID"))
+                //    dgvInvoice.Columns["InvoiceID"].Width = 80;
+                //if (dgvInvoice.Columns.Contains("InvoiceDate"))
+                //    dgvInvoice.Columns["InvoiceDate"].Width = 120;
+                //if (dgvInvoice.Columns.Contains("CustomerID"))
+                //    dgvInvoice.Columns["CustomerID"].Width = 100;
+                //if (dgvInvoice.Columns.Contains("EmployeeID"))
+                //    dgvInvoice.Columns["EmployeeID"].Width = 100;
+                //if (dgvInvoice.Columns.Contains("TotalAmount"))
+                //    dgvInvoice.Columns["TotalAmount"].Width = 120;
+
+                // Configure the DataGridView to fit within its container
+                dgvInvoice.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgvInvoice.AllowUserToResizeColumns = true;
+                dgvInvoice.AllowUserToResizeRows = true;
+            }
+            catch (Exception ex)
+            {
+                 MessageBox.Show("Error configuring invoice columns: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private bool ValidateInvoiceInputs(out string errorField)

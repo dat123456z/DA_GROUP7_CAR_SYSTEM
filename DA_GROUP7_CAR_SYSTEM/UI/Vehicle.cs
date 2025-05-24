@@ -79,7 +79,7 @@ namespace DA_GROUP7_CAR_SYSTEM
         {
             if (!ValidateVehicleInputs(out string errorField))
             {
-                MessageBox.Show($"Vui lòng nhập đúng thông tin trường: {errorField}", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Please enter the correct information for the field: {errorField}", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -90,7 +90,7 @@ namespace DA_GROUP7_CAR_SYSTEM
 
             if (count > 0)
             {
-                MessageBox.Show("Vehicle ID đã tồn tại. Vui lòng nhập ID khác.", "Trùng ID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vehicle ID already exists. Please enter a different ID.", "Duplicate ID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -101,13 +101,13 @@ namespace DA_GROUP7_CAR_SYSTEM
             string error = "";
             if (db.MyExecuteNonQuery(sql, CommandType.Text, ref error))
             {
-                MessageBox.Show("Thêm xe thành công!");
+                MessageBox.Show("Add vehicle successfully!");
                 LoadVehicleData();
                 ClearInputs();
             }
             else
             {
-                MessageBox.Show("Lỗi: " + error);
+                MessageBox.Show("Error: " + error);
             }
         }
 
@@ -135,13 +135,13 @@ namespace DA_GROUP7_CAR_SYSTEM
         {
             if (dgvVehicle.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Vui lòng chọn xe để lưu thay đổi!");
+                MessageBox.Show("Please select a vehicle to save changes!");
                 return;
             }
 
             if (!ValidateVehicleInputs(out string errorField))
             {
-                MessageBox.Show($"Vui lòng nhập đúng thông tin trường: {errorField}", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Please enter the correct information for the field: {errorField}", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -156,7 +156,7 @@ namespace DA_GROUP7_CAR_SYSTEM
 
                 if (count > 0)
                 {
-                    MessageBox.Show("Vehicle ID mới đã tồn tại. Không thể cập nhật trùng ID.", "Trùng ID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("New Vehicle ID already exists. Cannot update with duplicate ID.", "Duplicate ID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
             }
@@ -173,7 +173,7 @@ namespace DA_GROUP7_CAR_SYSTEM
             string error = "";
             if (db.MyExecuteNonQuery(sql, CommandType.Text, ref error))
             {
-                MessageBox.Show("Cập nhật xe thành công!");
+                MessageBox.Show("Update vehicle successfully!");
                 LoadVehicleData();
                 ClearInputs();
             }

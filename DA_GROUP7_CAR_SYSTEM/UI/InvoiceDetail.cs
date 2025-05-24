@@ -13,13 +13,56 @@ namespace DA_GROUP7_CAR_SYSTEM
             InitializeComponent();
             if (!this.DesignMode)
                 LoadInvoiceDetailData();
+
+            // Attach DataBindingComplete event handler
+            dgvInvoiceDetail.DataBindingComplete += dgvInvoiceDetail_DataBindingComplete;
         }
 
         private void LoadInvoiceDetailData()
         {
-            string sql = "SELECT * FROM InvoiceDetail";
-            DataSet ds = db.ExecuteQueryDataSet(sql, CommandType.Text);
-            dgvInvoiceDetail.DataSource = ds.Tables[0];
+            try
+            {
+                string sql = "SELECT * FROM InvoiceDetail";
+                DataSet ds = db.ExecuteQueryDataSet(sql, CommandType.Text);
+                dgvInvoiceDetail.DataSource = ds.Tables[0];
+
+                // Set the DataGridView to fill its container
+                dgvInvoiceDetail.Dock = DockStyle.Fill;
+
+                // Ensure the DataGridView stays within its container
+                dgvInvoiceDetail.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+
+                // Column configuration will be done in DataBindingComplete event
+            }
+            catch (Exception ex)
+            {
+                 MessageBox.Show("Error loading invoice detail data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dgvInvoiceDetail_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            try
+            {
+                // Configure column widths and sizing after data binding is complete
+                if (dgvInvoiceDetail.Columns.Contains("InvoiceID"))
+                    dgvInvoiceDetail.Columns["InvoiceID"].Width = 80;
+                if (dgvInvoiceDetail.Columns.Contains("VehicleID"))
+                    dgvInvoiceDetail.Columns["VehicleID"].Width = 80;
+                if (dgvInvoiceDetail.Columns.Contains("Quantity"))
+                    dgvInvoiceDetail.Columns["Quantity"].Width = 80;
+                if (dgvInvoiceDetail.Columns.Contains("UnitPrice"))
+                    dgvInvoiceDetail.Columns["UnitPrice"].Width = 100;
+
+                // Configure the DataGridView to fit within its container
+                dgvInvoiceDetail.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgvInvoiceDetail.AllowUserToResizeColumns = true;
+                dgvInvoiceDetail.AllowUserToResizeRows = true;
+            }
+            catch (Exception ex)
+            {
+                 MessageBox.Show("Error configuring invoice detail columns: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private bool ValidateDetailInputs(out string errorField)

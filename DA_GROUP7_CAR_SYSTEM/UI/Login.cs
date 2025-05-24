@@ -114,7 +114,7 @@ namespace DA_GROUP7_CAR_SYSTEM
                 string.IsNullOrEmpty(phoneNumber) || string.IsNullOrEmpty(address) || 
                 string.IsNullOrEmpty(email))
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter all information!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -128,7 +128,7 @@ namespace DA_GROUP7_CAR_SYSTEM
             // Validate phone number format (assuming Vietnamese phone number)
             if (!IsValidPhoneNumber(phoneNumber))
             {
-                MessageBox.Show("Số điện thoại không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Phone number is invalid!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 

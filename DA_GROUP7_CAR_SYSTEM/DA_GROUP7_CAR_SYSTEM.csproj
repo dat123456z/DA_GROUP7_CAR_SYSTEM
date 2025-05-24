@@ -46,7 +46,7 @@
       <HintPath>..\packages\Costura.Fody.3.3.3\lib\net40\Costura.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI">
-      <HintPath>..\..\..\End_term\Guna.UI.dll</HintPath>
+      <HintPath>..\..\..\DA_WINFORM_CK\Guna.UI.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net472\Guna.UI2.dll</HintPath>
@@ -207,9 +207,29 @@
     </Reference>
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.DataVisualization, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Chart.Controls.4.7.2046\lib\net35\System.Web.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DataVisualization.Design, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Chart.Controls.4.7.2046\lib\net35\System.Web.DataVisualization.Design.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Web.Services.Description, Version=4.9.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Web.Services.Description.4.9.0\lib\net461\System.Web.Services.Description.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Chart.Controls.4.7.2046\lib\net35\System.Windows.Forms.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization.Design, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Chart.Controls.4.7.2046\lib\net35\System.Windows.Forms.DataVisualization.Design.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -225,26 +245,36 @@
   <ItemGroup>
     <Compile Include="BSLayer\BLBuyCar.cs" />
     <Compile Include="BSLayer\BLCustomer.cs" />
-
     <Compile Include="BSLayer\BLEmployee.cs" />
     <Compile Include="BSLayer\BLInvoice.cs" />
     <Compile Include="BSLayer\BLInvoiceDetail.cs" />
-
     <Compile Include="BSLayer\BLLogin.cs" />
     <Compile Include="BSLayer\BLSignUp.cs" />
     <Compile Include="BSLayer\BLVehicle.cs" />
     <Compile Include="DBLayer\DBMain.cs" />
+    <Compile Include="UI\BrandVehicleChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI\BuyCar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\BuyCar.Designer.cs">
       <DependentUpon>BuyCar.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\ColorVehicleChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI\CustomerFr.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\CustomerFr.Designer.cs">
       <DependentUpon>CustomerFr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EmployeeChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\EmployeeChart.Designer.cs">
+      <DependentUpon>EmployeeChart.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\EmployeeFr.cs">
       <SubType>Form</SubType>
@@ -455,12 +485,9 @@
     <Error Condition="!Exists('..\packages\Costura.Fody.3.3.3\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.3.3.3\build\Costura.Fody.props'))" />
   </Target>
   <PropertyGroup>
-
     <PreBuildEvent>
     </PreBuildEvent>
-
-    <PreBuildEvent>taskkill /F /IM DA_GROUP7_CAR_SYSTEM.exe &gt; NUL 2&gt;&amp;1
-</PreBuildEvent>
-
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
 </Project>
