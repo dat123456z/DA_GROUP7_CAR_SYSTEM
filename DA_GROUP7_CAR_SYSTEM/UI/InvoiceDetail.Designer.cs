@@ -102,7 +102,7 @@
             this.btnSaveInvoiceDetail.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSaveInvoiceDetail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSaveInvoiceDetail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSaveInvoiceDetail.FillColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnSaveInvoiceDetail.FillColor = System.Drawing.Color.CornflowerBlue;
             this.btnSaveInvoiceDetail.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSaveInvoiceDetail.ForeColor = System.Drawing.Color.White;
             this.btnSaveInvoiceDetail.Location = new System.Drawing.Point(241, 532);
@@ -120,7 +120,7 @@
             this.btnDeleteInvoiceDetail.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDeleteInvoiceDetail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnDeleteInvoiceDetail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDeleteInvoiceDetail.FillColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnDeleteInvoiceDetail.FillColor = System.Drawing.Color.CornflowerBlue;
             this.btnDeleteInvoiceDetail.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDeleteInvoiceDetail.ForeColor = System.Drawing.Color.White;
             this.btnDeleteInvoiceDetail.Location = new System.Drawing.Point(45, 532);
@@ -138,7 +138,7 @@
             this.btnUpdateInvoiceDetail.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnUpdateInvoiceDetail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnUpdateInvoiceDetail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnUpdateInvoiceDetail.FillColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnUpdateInvoiceDetail.FillColor = System.Drawing.Color.CornflowerBlue;
             this.btnUpdateInvoiceDetail.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnUpdateInvoiceDetail.ForeColor = System.Drawing.Color.White;
             this.btnUpdateInvoiceDetail.Location = new System.Drawing.Point(241, 427);
@@ -157,7 +157,7 @@
             this.btnAddInvoiceDetail.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAddInvoiceDetail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAddInvoiceDetail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAddInvoiceDetail.FillColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnAddInvoiceDetail.FillColor = System.Drawing.Color.CornflowerBlue;
             this.btnAddInvoiceDetail.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAddInvoiceDetail.ForeColor = System.Drawing.Color.White;
             this.btnAddInvoiceDetail.Location = new System.Drawing.Point(48, 427);

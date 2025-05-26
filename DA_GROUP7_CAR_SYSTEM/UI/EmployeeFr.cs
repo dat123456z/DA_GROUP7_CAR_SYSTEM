@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
+using DA_GROUP7_CAR_SYSTEM.BSLayer;
 using DA_GROUP7_CAR_SYSTEM.DBLayer;
 
 namespace DA_GROUP7_CAR_SYSTEM
@@ -8,20 +10,23 @@ namespace DA_GROUP7_CAR_SYSTEM
     public partial class EmployeeFr : Form
     {
         private DBMain db = new DBMain();
+        private BLEmployee blEmployee = new BLEmployee();
+        private BLSalary blSalary = new BLSalary();
 
         public EmployeeFr()
         {
             InitializeComponent();
             if (!this.DesignMode)
                 LoadEmployeeData();
+            this.Load += Loadsalary;
+
         }
 
         private void LoadEmployeeData()
         {
             try
             {
-                string sql = "SELECT * FROM Employee";
-                DataSet ds = db.ExecuteQueryDataSet(sql, CommandType.Text);
+                DataSet ds = blEmployee.GetEmployees();
                 dgvEmployee.DataSource = ds.Tables[0];
                 dgvEmployee.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
@@ -35,11 +40,6 @@ namespace DA_GROUP7_CAR_SYSTEM
         {
             errorField = "";
 
-            if (string.IsNullOrWhiteSpace(txtEmployeeID.Text))
-            {
-                errorField = "Employee ID";
-                return false;
-            }
 
             if (string.IsNullOrWhiteSpace(txtFullName.Text))
             {
@@ -81,33 +81,19 @@ namespace DA_GROUP7_CAR_SYSTEM
                 return;
             }
 
-            int newID = int.Parse(txtEmployeeID.Text);
-            string checkSql = $"SELECT COUNT(*) FROM Employee WHERE EmployeeID = {newID}";
-            DataSet ds = db.ExecuteQueryDataSet(checkSql, CommandType.Text);
-            int count = Convert.ToInt32(ds.Tables[0].Rows[0][0]);
-
-            if (count > 0)
-            {
-                MessageBox.Show("Employee ID already exists. Please enter a different ID.", "Duplicate ID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            string sql = $@"INSERT INTO Employee (EmployeeID, FullName, Position, PhoneNumber, Email)
-                            VALUES ({txtEmployeeID.Text}, N'{txtFullName.Text}', N'{txtPosition.Text}', 
-                                    N'{txtPhoneNumber.Text}', N'{txtEmail.Text}')";
-
             string error = "";
-            if (db.MyExecuteNonQuery(sql, CommandType.Text, ref error))
+            if (blEmployee.AddEmployee(txtFullName.Text, txtPosition.Text, txtPhoneNumber.Text, txtEmail.Text, ref error))
             {
-                MessageBox.Show("Add employee successfully!");
+                MessageBox.Show("Employee added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadEmployeeData();
                 ClearInputs();
             }
             else
             {
-                MessageBox.Show("Error: " + error);
+                MessageBox.Show("Error adding employee: " + error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void btnSaveEmployee_Click(object sender, EventArgs e)
         {
@@ -123,41 +109,20 @@ namespace DA_GROUP7_CAR_SYSTEM
                 return;
             }
 
-            int oldID = Convert.ToInt32(dgvEmployee.SelectedRows[0].Cells["EmployeeID"].Value);
-            int newID = int.Parse(txtEmployeeID.Text);
-
-            if (newID != oldID)
-            {
-                string checkSql = $"SELECT COUNT(*) FROM Employee WHERE EmployeeID = {newID}";
-                DataSet ds = db.ExecuteQueryDataSet(checkSql, CommandType.Text);
-                int count = Convert.ToInt32(ds.Tables[0].Rows[0][0]);
-
-                if (count > 0)
-                {
-                    MessageBox.Show("Employee ID mới đã tồn tại. Không thể cập nhật.", "Trùng ID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-            }
-
-            string sql = $@"UPDATE Employee
-                            SET EmployeeID = {newID},
-                                FullName = N'{txtFullName.Text}',
-                                Position = N'{txtPosition.Text}',
-                                PhoneNumber = N'{txtPhoneNumber.Text}',
-                                Email = N'{txtEmail.Text}'
-                            WHERE EmployeeID = {oldID}";
-
+            int employeeID = Convert.ToInt32(dgvEmployee.SelectedRows[0].Cells["EmployeeID"].Value);
             string error = "";
-            if (db.MyExecuteNonQuery(sql, CommandType.Text, ref error))
+
+            if (blEmployee.UpdateEmployee(employeeID, txtFullName.Text, txtPosition.Text, txtPhoneNumber.Text, txtEmail.Text, ref error))
             {
-                MessageBox.Show("Cập nhật nhân viên thành công!");
+                MessageBox.Show("Employee update successful!");
                 LoadEmployeeData();
                 ClearInputs();
             }
             else
             {
-                MessageBox.Show("Lỗi: " + error);
+                MessageBox.Show("Update error: " + error);
             }
+
         }
 
         private void btnUpdateEmployee_Click(object sender, EventArgs e)
@@ -165,7 +130,6 @@ namespace DA_GROUP7_CAR_SYSTEM
             if (dgvEmployee.SelectedRows.Count > 0)
             {
                 DataGridViewRow row = dgvEmployee.SelectedRows[0];
-                txtEmployeeID.Text = row.Cells["EmployeeID"].Value?.ToString() ?? "";
                 txtFullName.Text = row.Cells["FullName"].Value?.ToString() ?? "";
                 txtPosition.Text = row.Cells["Position"].Value?.ToString() ?? "";
                 txtPhoneNumber.Text = row.Cells["PhoneNumber"].Value?.ToString() ?? "";
@@ -173,7 +137,7 @@ namespace DA_GROUP7_CAR_SYSTEM
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn một nhân viên để sửa!");
+                MessageBox.Show("Please select an employee to edit!");
             }
         }
 
@@ -181,27 +145,27 @@ namespace DA_GROUP7_CAR_SYSTEM
         {
             if (dgvEmployee.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Vui lòng chọn nhân viên để xóa!");
+                MessageBox.Show("Please select an employee to delete!");
                 return;
             }
 
-            var confirm = MessageBox.Show("Bạn có chắc muốn xóa nhân viên này?", "Xác nhận", MessageBoxButtons.YesNo);
+            var confirm = MessageBox.Show("Are you sure you want to delete this employee?", "Confirm", MessageBoxButtons.YesNo);
             if (confirm == DialogResult.Yes)
             {
                 int employeeID = Convert.ToInt32(dgvEmployee.SelectedRows[0].Cells["EmployeeID"].Value);
-                string sql = $"DELETE FROM Employee WHERE EmployeeID = {employeeID}";
-
                 string error = "";
-                if (db.MyExecuteNonQuery(sql, CommandType.Text, ref error))
+
+                if (blEmployee.DeleteEmployee(employeeID, ref error))
                 {
-                    MessageBox.Show("Xóa thành công!");
+                    MessageBox.Show("Deleted successfully!");
                     LoadEmployeeData();
                     ClearInputs();
                 }
                 else
                 {
-                    MessageBox.Show("Lỗi: " + error);
+                    MessageBox.Show("Deletion error: " + error);
                 }
+
             }
         }
 
@@ -210,7 +174,7 @@ namespace DA_GROUP7_CAR_SYSTEM
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dgvEmployee.Rows[e.RowIndex];
-                txtEmployeeID.Text = row.Cells["EmployeeID"].Value?.ToString() ?? "";
+           
                 txtFullName.Text = row.Cells["FullName"].Value?.ToString() ?? "";
                 txtPosition.Text = row.Cells["Position"].Value?.ToString() ?? "";
                 txtPhoneNumber.Text = row.Cells["PhoneNumber"].Value?.ToString() ?? "";
@@ -220,16 +184,53 @@ namespace DA_GROUP7_CAR_SYSTEM
 
         private void ClearInputs()
         {
-            txtEmployeeID.Clear();
+            
             txtFullName.Clear();
             txtPosition.Clear();
             txtPhoneNumber.Clear();
             txtEmail.Clear();
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
 
+        
+        private void btn_CalculateSalary_Click(object sender, EventArgs e)
+        {
+            dgvSalary.Visible= true;
+            label2.Visible= true;
+            int month = int.Parse(cbbMonth.SelectedItem.ToString());
+            int year = int.Parse(cbbYear.SelectedItem.ToString());
+
+            DataSet ds = blSalary.GetMonthlySalary(month, year);
+            dgvSalary.DataSource = ds.Tables[0];
+            dgvSalary.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvSalary.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgvSalary.AllowUserToResizeColumns = false;
+        }
+        private void Loadsalary(object sender, EventArgs e)
+        {
+            for (int m = 1; m <= 12; m++) cbbMonth.Items.Add(m);
+            for (int y = 2020; y <= DateTime.Now.Year; y++) cbbYear.Items.Add(y);
+
+            cbbMonth.SelectedItem = DateTime.Now.Month;
+            cbbYear.SelectedItem = DateTime.Now.Year;
+        }
+
+        private void btn_SaveSalary_Click(object sender, EventArgs e)
+        {
+            int month = int.Parse(cbbMonth.SelectedItem.ToString());
+            int year = int.Parse(cbbYear.SelectedItem.ToString());
+
+            try
+            {
+                blSalary.SaveMonthlySalary(month, year);
+                MessageBox.Show("Payroll saved to database!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error saving payroll: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            dgvSalary.Visible = false;
+            label2.Visible = false;
         }
     }
 }

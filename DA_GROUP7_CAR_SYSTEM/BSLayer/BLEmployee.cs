@@ -11,17 +11,23 @@ namespace DA_GROUP7_CAR_SYSTEM.BSLayer
         // Lấy tất cả dữ liệu nhân viên
         public DataSet GetEmployees()
         {
-            string sql = "SELECT * FROM Employee";
+            string sql = @"
+            SELECT EmployeeID, FullName, Position, PhoneNumber, Email
+            FROM Employee
+            WHERE IsActive = 1";
+
             return db.ExecuteQueryDataSet(sql, CommandType.Text);
         }
 
+
         // Thêm nhân viên mới
-        public bool AddEmployee(int employeeID, string fullName, string position, string phoneNumber, string email, ref string error)
+        public bool AddEmployee(string fullName, string position, string phoneNumber, string email, ref string error)
         {
-            string sql = $"INSERT INTO Employee (EmployeeID, FullName, Position, PhoneNumber, Email) " +
-                         $"VALUES ({employeeID}, N'{fullName}', N'{position}', N'{phoneNumber}', N'{email}')";
+            string sql = $"INSERT INTO Employee (FullName, Position, PhoneNumber, Email) " +
+                         $"VALUES (N'{fullName}', N'{position}', N'{phoneNumber}', N'{email}')";
             return db.MyExecuteNonQuery(sql, CommandType.Text, ref error);
         }
+
 
         // Cập nhật thông tin nhân viên
         public bool UpdateEmployee(int employeeID, string fullName, string position, string phoneNumber, string email, ref string error)
@@ -38,8 +44,9 @@ namespace DA_GROUP7_CAR_SYSTEM.BSLayer
         // Xoá nhân viên theo EmployeeID
         public bool DeleteEmployee(int employeeID, ref string error)
         {
-            string sql = $"DELETE FROM Employee WHERE EmployeeID = {employeeID}";
+            string sql = $"UPDATE Employee SET IsActive = 0 WHERE EmployeeID = {employeeID}";
             return db.MyExecuteNonQuery(sql, CommandType.Text, ref error);
         }
+
     }
 }

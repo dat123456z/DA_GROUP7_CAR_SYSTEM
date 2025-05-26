@@ -37,7 +37,7 @@ namespace DA_GROUP7_CAR_SYSTEM
             }
             catch (Exception ex)
             {
-                 MessageBox.Show("Error loading invoice data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error loading invoice data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -64,7 +64,7 @@ namespace DA_GROUP7_CAR_SYSTEM
             }
             catch (Exception ex)
             {
-                 MessageBox.Show("Error configuring invoice columns: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error configuring invoice columns: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

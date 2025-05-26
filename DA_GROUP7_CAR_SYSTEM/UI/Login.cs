@@ -121,7 +121,7 @@ namespace DA_GROUP7_CAR_SYSTEM
             // Validate email format
             if (!IsValidEmail(email))
             {
-                MessageBox.Show("Email không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Invalid email!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -137,7 +137,7 @@ namespace DA_GROUP7_CAR_SYSTEM
             bool isValid = blSignUp.CheckLogin(loginName, password, phoneNumber, address, email, ref error);
             if (isValid)
             {
-                MessageBox.Show("Đăng ký thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Registration successful!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
                 // Clear input fields
                 txtLoginName.Text = "";
@@ -153,7 +153,7 @@ namespace DA_GROUP7_CAR_SYSTEM
             }
             else
             {
-                MessageBox.Show("Đăng ký thất bại! " + error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Registration failed! " + error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

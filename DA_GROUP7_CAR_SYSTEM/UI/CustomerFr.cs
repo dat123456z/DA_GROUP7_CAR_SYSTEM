@@ -294,8 +294,8 @@ namespace DA_GROUP7_CAR_SYSTEM
                 return;
 
             string error = "";
-            string sql = $@"INSERT INTO Customer (CustomerID,FullName, Address, PhoneNumber, Email)
-                           VALUES (N'{(txtCustomerID != null ? txtCustomerID.Text : string.Empty)}',N'{(txtFullName != null ? txtFullName.Text : string.Empty)}', N'{(txtAddress != null ? txtAddress.Text : string.Empty)}', N'{(txtPhoneNumber != null ? txtPhoneNumber.Text : string.Empty)}', N'{(txtEmail != null ? txtEmail.Text : string.Empty)}')";
+            string sql = $@"INSERT INTO Customer (FullName, Address, PhoneNumber, Email)
+                           VALUES (N'{(txtFullName != null ? txtFullName.Text : string.Empty)}', N'{(txtAddress != null ? txtAddress.Text : string.Empty)}', N'{(txtPhoneNumber != null ? txtPhoneNumber.Text : string.Empty)}', N'{(txtEmail != null ? txtEmail.Text : string.Empty)}')";
 
             DBMain db = new DBMain();
             if (db.MyExecuteNonQuery(sql, CommandType.Text, ref error))
@@ -373,8 +373,8 @@ namespace DA_GROUP7_CAR_SYSTEM
 
                 string error = "";
                 string sql = $@"UPDATE Customer 
-                              SET CustomerID = {newCustomerID},
-                                  FullName = N'{(txtFullName != null ? txtFullName.Text : string.Empty)}',
+                              
+                                 SET FullName = N'{(txtFullName != null ? txtFullName.Text : string.Empty)}',
                                   Address = N'{(txtAddress != null ? txtAddress.Text : string.Empty)}',
                                   PhoneNumber = N'{(txtPhoneNumber != null ? txtPhoneNumber.Text : string.Empty)}',
                                   Email = N'{(txtEmail != null ? txtEmail.Text : string.Empty)}'
@@ -555,6 +555,7 @@ namespace DA_GROUP7_CAR_SYSTEM
                 switch (searchCriteria)
                 {
                     case "CustomerID":
+                        string trimmedValue = searchValue.Trim();
                         if (int.TryParse(searchValue, out int customerId))
                         {
                             filterExpression = $"CustomerID = {customerId}";

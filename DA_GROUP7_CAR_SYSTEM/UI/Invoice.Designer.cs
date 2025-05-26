@@ -97,10 +97,10 @@
             this.btnSaveInvoice.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSaveInvoice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSaveInvoice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSaveInvoice.FillColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnSaveInvoice.FillColor = System.Drawing.Color.CornflowerBlue;
             this.btnSaveInvoice.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSaveInvoice.ForeColor = System.Drawing.Color.White;
-            this.btnSaveInvoice.Location = new System.Drawing.Point(241, 522);
+            this.btnSaveInvoice.Location = new System.Drawing.Point(229, 649);
             this.btnSaveInvoice.Name = "btnSaveInvoice";
             this.btnSaveInvoice.Size = new System.Drawing.Size(135, 59);
             this.btnSaveInvoice.TabIndex = 36;
@@ -114,10 +114,10 @@
             this.btnDeleteInvoice.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDeleteInvoice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnDeleteInvoice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDeleteInvoice.FillColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnDeleteInvoice.FillColor = System.Drawing.Color.CornflowerBlue;
             this.btnDeleteInvoice.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDeleteInvoice.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteInvoice.Location = new System.Drawing.Point(68, 522);
+            this.btnDeleteInvoice.Location = new System.Drawing.Point(44, 649);
             this.btnDeleteInvoice.Name = "btnDeleteInvoice";
             this.btnDeleteInvoice.Size = new System.Drawing.Size(135, 59);
             this.btnDeleteInvoice.TabIndex = 35;
@@ -131,10 +131,10 @@
             this.btnUpdateInvoice.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnUpdateInvoice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnUpdateInvoice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnUpdateInvoice.FillColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnUpdateInvoice.FillColor = System.Drawing.Color.CornflowerBlue;
             this.btnUpdateInvoice.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnUpdateInvoice.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateInvoice.Location = new System.Drawing.Point(241, 427);
+            this.btnUpdateInvoice.Location = new System.Drawing.Point(229, 568);
             this.btnUpdateInvoice.Name = "btnUpdateInvoice";
             this.btnUpdateInvoice.Size = new System.Drawing.Size(135, 59);
             this.btnUpdateInvoice.TabIndex = 34;
@@ -149,10 +149,10 @@
             this.btnAddInvoice.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAddInvoice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAddInvoice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAddInvoice.FillColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnAddInvoice.FillColor = System.Drawing.Color.CornflowerBlue;
             this.btnAddInvoice.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAddInvoice.ForeColor = System.Drawing.Color.White;
-            this.btnAddInvoice.Location = new System.Drawing.Point(68, 427);
+            this.btnAddInvoice.Location = new System.Drawing.Point(44, 568);
             this.btnAddInvoice.Name = "btnAddInvoice";
             this.btnAddInvoice.Size = new System.Drawing.Size(135, 59);
             this.btnAddInvoice.TabIndex = 33;
@@ -253,11 +253,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvInvoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInvoice.Location = new System.Drawing.Point(6, 49);
+            this.dgvInvoice.Location = new System.Drawing.Point(8, 49);
             this.dgvInvoice.Name = "dgvInvoice";
             this.dgvInvoice.RowHeadersWidth = 51;
             this.dgvInvoice.RowTemplate.Height = 24;
-            this.dgvInvoice.Size = new System.Drawing.Size(755, 693);
+            this.dgvInvoice.Size = new System.Drawing.Size(811, 670);
             this.dgvInvoice.TabIndex = 2;
             // 
             // label1
@@ -298,17 +298,17 @@
         private Guna.UI2.WinForms.Guna2Button btnDeleteInvoice;
         private Guna.UI2.WinForms.Guna2Button btnUpdateInvoice;
         private Guna.UI2.WinForms.Guna2Button btnAddInvoice;
-        private System.Windows.Forms.TextBox txtTotalAmount;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtEmployeeID;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtInvoiceID;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgvInvoice;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpInvoiceDate;
+        private System.Windows.Forms.TextBox txtTotalAmount;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtInvoiceID;
+        private System.Windows.Forms.Label label2;
     }
 }
