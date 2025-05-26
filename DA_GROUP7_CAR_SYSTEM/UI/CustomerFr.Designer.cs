@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtbtnSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.comBoxSearch = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.btnSaveCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.btnDeleteCustomer = new Guna.UI2.WinForms.Guna2Button();
@@ -51,10 +55,6 @@
             this.btnFirst = new System.Windows.Forms.Button();
             this.dgvCustomer = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comBoxSearch = new System.Windows.Forms.ComboBox();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.txtbtnSearch = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
@@ -87,6 +87,49 @@
             this.panel1.Size = new System.Drawing.Size(421, 745);
             this.panel1.TabIndex = 0;
             // 
+            // txtbtnSearch
+            // 
+            this.txtbtnSearch.Location = new System.Drawing.Point(53, 120);
+            this.txtbtnSearch.Multiline = true;
+            this.txtbtnSearch.Name = "txtbtnSearch";
+            this.txtbtnSearch.Size = new System.Drawing.Size(347, 37);
+            this.txtbtnSearch.TabIndex = 41;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
+            this.btnSearch.Location = new System.Drawing.Point(125, 163);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(194, 37);
+            this.btnSearch.TabIndex = 40;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // comBoxSearch
+            // 
+            this.comBoxSearch.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
+            this.comBoxSearch.FormattingEnabled = true;
+            this.comBoxSearch.Items.AddRange(new object[] {
+            "CustomerID",
+            "Full Name",
+            "Address",
+            "PhoneNumber"});
+            this.comBoxSearch.Location = new System.Drawing.Point(206, 80);
+            this.comBoxSearch.Name = "comBoxSearch";
+            this.comBoxSearch.Size = new System.Drawing.Size(194, 28);
+            this.comBoxSearch.TabIndex = 39;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
+            this.label7.Location = new System.Drawing.Point(49, 84);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(107, 20);
+            this.label7.TabIndex = 38;
+            this.label7.Text = "Search For :";
+            // 
             // txtAddress
             // 
             this.txtAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -105,10 +148,10 @@
             this.btnSaveCustomer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSaveCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSaveCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSaveCustomer.FillColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnSaveCustomer.FillColor = System.Drawing.Color.CornflowerBlue;
             this.btnSaveCustomer.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSaveCustomer.ForeColor = System.Drawing.Color.White;
-            this.btnSaveCustomer.Location = new System.Drawing.Point(232, 683);
+            this.btnSaveCustomer.Location = new System.Drawing.Point(244, 648);
             this.btnSaveCustomer.Name = "btnSaveCustomer";
             this.btnSaveCustomer.Size = new System.Drawing.Size(135, 59);
             this.btnSaveCustomer.TabIndex = 36;
@@ -123,10 +166,10 @@
             this.btnDeleteCustomer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDeleteCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnDeleteCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDeleteCustomer.FillColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnDeleteCustomer.FillColor = System.Drawing.Color.CornflowerBlue;
             this.btnDeleteCustomer.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDeleteCustomer.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteCustomer.Location = new System.Drawing.Point(59, 683);
+            this.btnDeleteCustomer.Location = new System.Drawing.Point(71, 648);
             this.btnDeleteCustomer.Name = "btnDeleteCustomer";
             this.btnDeleteCustomer.Size = new System.Drawing.Size(135, 59);
             this.btnDeleteCustomer.TabIndex = 35;
@@ -141,10 +184,10 @@
             this.btnUpdateCustomer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnUpdateCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnUpdateCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnUpdateCustomer.FillColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnUpdateCustomer.FillColor = System.Drawing.Color.CornflowerBlue;
             this.btnUpdateCustomer.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnUpdateCustomer.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateCustomer.Location = new System.Drawing.Point(232, 605);
+            this.btnUpdateCustomer.Location = new System.Drawing.Point(244, 570);
             this.btnUpdateCustomer.Name = "btnUpdateCustomer";
             this.btnUpdateCustomer.Size = new System.Drawing.Size(135, 59);
             this.btnUpdateCustomer.TabIndex = 34;
@@ -160,10 +203,10 @@
             this.btnAddCustomer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAddCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAddCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAddCustomer.FillColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnAddCustomer.FillColor = System.Drawing.Color.CornflowerBlue;
             this.btnAddCustomer.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAddCustomer.ForeColor = System.Drawing.Color.White;
-            this.btnAddCustomer.Location = new System.Drawing.Point(59, 605);
+            this.btnAddCustomer.Location = new System.Drawing.Point(71, 570);
             this.btnAddCustomer.Name = "btnAddCustomer";
             this.btnAddCustomer.Size = new System.Drawing.Size(135, 59);
             this.btnAddCustomer.TabIndex = 33;
@@ -327,66 +370,23 @@
             this.dgvCustomer.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvCustomer.ColumnHeadersHeight = 29;
             this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvCustomer.Location = new System.Drawing.Point(23, 59);
+            this.dgvCustomer.Location = new System.Drawing.Point(18, 59);
             this.dgvCustomer.Name = "dgvCustomer";
             this.dgvCustomer.RowHeadersWidth = 51;
             this.dgvCustomer.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvCustomer.RowTemplate.Height = 24;
-            this.dgvCustomer.Size = new System.Drawing.Size(755, 946);
+            this.dgvCustomer.Size = new System.Drawing.Size(780, 758);
             this.dgvCustomer.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 14);
+            this.label1.Location = new System.Drawing.Point(30, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(165, 23);
             this.label1.TabIndex = 1;
             this.label1.Text = "Data Customer";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
-            this.label7.Location = new System.Drawing.Point(49, 84);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(107, 20);
-            this.label7.TabIndex = 38;
-            this.label7.Text = "Search For :";
-            // 
-            // comBoxSearch
-            // 
-            this.comBoxSearch.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
-            this.comBoxSearch.FormattingEnabled = true;
-            this.comBoxSearch.Items.AddRange(new object[] {
-            "CustomerID",
-            "Full Name",
-            "Address",
-            "PhoneNumber"});
-            this.comBoxSearch.Location = new System.Drawing.Point(206, 80);
-            this.comBoxSearch.Name = "comBoxSearch";
-            this.comBoxSearch.Size = new System.Drawing.Size(194, 28);
-            this.comBoxSearch.TabIndex = 39;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
-            this.btnSearch.Location = new System.Drawing.Point(125, 163);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(194, 37);
-            this.btnSearch.TabIndex = 40;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // txtbtnSearch
-            // 
-            this.txtbtnSearch.Location = new System.Drawing.Point(53, 120);
-            this.txtbtnSearch.Multiline = true;
-            this.txtbtnSearch.Name = "txtbtnSearch";
-            this.txtbtnSearch.Size = new System.Drawing.Size(347, 37);
-            this.txtbtnSearch.TabIndex = 41;
             // 
             // CustomerFr
             // 

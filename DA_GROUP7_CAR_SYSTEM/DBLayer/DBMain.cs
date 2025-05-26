@@ -10,7 +10,7 @@ namespace DA_GROUP7_CAR_SYSTEM.DBLayer
 {
     class DBMain
     {
-        string ConnStr = "Data Source=(local);Initial Catalog=CarSystem;Integrated Security=True";
+        string ConnStr = "Data Source=(local);Initial Catalog=CarDealership;Integrated Security=True";
         SqlConnection conn = null;
         SqlCommand comm = null;
         SqlDataAdapter da = null;

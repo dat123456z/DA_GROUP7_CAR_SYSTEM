@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DA_GROUP7_CAR_SYSTEM.UI;
 
 namespace DA_GROUP7_CAR_SYSTEM
 {
@@ -16,7 +17,7 @@ namespace DA_GROUP7_CAR_SYSTEM
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainFr());
+            Application.Run(new FRMain());
         }
     }
 }

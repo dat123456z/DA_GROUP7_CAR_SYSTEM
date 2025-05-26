@@ -35,9 +35,9 @@
             this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.Pn_Logo = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.btn_CarManagement = new System.Windows.Forms.Button();
             this.Pn_SubCarManagement = new System.Windows.Forms.Panel();
             this.btn_Vehicle = new Guna.UI2.WinForms.Guna2Button();
@@ -49,15 +49,15 @@
             this.btn_Employee = new Guna.UI2.WinForms.Guna2Button();
             this.btn_InvoiceManagement = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btn_Invoice = new Guna.UI2.WinForms.Guna2Button();
             this.btn_InvoiceDetail = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_Invoice = new Guna.UI2.WinForms.Guna2Button();
             this.btn_Other = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnBrandChart = new Guna.UI2.WinForms.Guna2Button();
+            this.btnColorVehicle = new Guna.UI2.WinForms.Guna2Button();
             this.btnEmployeeChar = new Guna.UI2.WinForms.Guna2Button();
             this.btnLogOut = new Guna.UI2.WinForms.Guna2Button();
-            this.btnColorVehicle = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.btnBrandChart = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.Pn_Logo.SuspendLayout();
             this.Pn_SubCarManagement.SuspendLayout();
@@ -148,17 +148,17 @@
             this.Pn_Logo.Size = new System.Drawing.Size(250, 92);
             this.Pn_Logo.TabIndex = 0;
             // 
-            // label4
+            // label2
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(27, 14);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(196, 23);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Showroom Group 7";
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(144, 52);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 19);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Admin";
             // 
             // label3
             // 
@@ -172,17 +172,17 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "User name:";
             // 
-            // label2
+            // label4
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(144, 52);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 19);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Admin";
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(27, 14);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(196, 23);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Showroom Group 7";
             // 
             // btn_CarManagement
             // 
@@ -356,27 +356,6 @@
             this.panel3.Size = new System.Drawing.Size(250, 111);
             this.panel3.TabIndex = 8;
             // 
-            // btn_Invoice
-            // 
-            this.btn_Invoice.Animated = true;
-            this.btn_Invoice.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Invoice.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Invoice.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Invoice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_Invoice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_Invoice.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_Invoice.FillColor = System.Drawing.Color.Transparent;
-            this.btn_Invoice.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Invoice.ForeColor = System.Drawing.Color.Black;
-            this.btn_Invoice.Location = new System.Drawing.Point(0, 0);
-            this.btn_Invoice.Name = "btn_Invoice";
-            this.btn_Invoice.Padding = new System.Windows.Forms.Padding(45, 0, 0, 0);
-            this.btn_Invoice.Size = new System.Drawing.Size(250, 42);
-            this.btn_Invoice.TabIndex = 10;
-            this.btn_Invoice.Text = "Invoice";
-            this.btn_Invoice.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_Invoice.Click += new System.EventHandler(this.btn_Invoice_Click);
-            // 
             // btn_InvoiceDetail
             // 
             this.btn_InvoiceDetail.Animated = true;
@@ -397,6 +376,27 @@
             this.btn_InvoiceDetail.Text = "InvoiceDetail";
             this.btn_InvoiceDetail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_InvoiceDetail.Click += new System.EventHandler(this.btn_InvoiceDetail_Click);
+            // 
+            // btn_Invoice
+            // 
+            this.btn_Invoice.Animated = true;
+            this.btn_Invoice.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Invoice.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Invoice.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Invoice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Invoice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Invoice.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Invoice.FillColor = System.Drawing.Color.Transparent;
+            this.btn_Invoice.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Invoice.ForeColor = System.Drawing.Color.Black;
+            this.btn_Invoice.Location = new System.Drawing.Point(0, 0);
+            this.btn_Invoice.Name = "btn_Invoice";
+            this.btn_Invoice.Padding = new System.Windows.Forms.Padding(45, 0, 0, 0);
+            this.btn_Invoice.Size = new System.Drawing.Size(250, 42);
+            this.btn_Invoice.TabIndex = 10;
+            this.btn_Invoice.Text = "Invoice";
+            this.btn_Invoice.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_Invoice.Click += new System.EventHandler(this.btn_Invoice_Click);
             // 
             // btn_Other
             // 
@@ -424,8 +424,50 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 837);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(250, 123);
+            this.panel4.Size = new System.Drawing.Size(250, 166);
             this.panel4.TabIndex = 10;
+            // 
+            // btnBrandChart
+            // 
+            this.btnBrandChart.Animated = true;
+            this.btnBrandChart.BackColor = System.Drawing.Color.Transparent;
+            this.btnBrandChart.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBrandChart.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBrandChart.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBrandChart.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBrandChart.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBrandChart.FillColor = System.Drawing.Color.Transparent;
+            this.btnBrandChart.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrandChart.ForeColor = System.Drawing.Color.White;
+            this.btnBrandChart.Location = new System.Drawing.Point(0, 103);
+            this.btnBrandChart.Name = "btnBrandChart";
+            this.btnBrandChart.Padding = new System.Windows.Forms.Padding(45, 0, 0, 0);
+            this.btnBrandChart.Size = new System.Drawing.Size(250, 27);
+            this.btnBrandChart.TabIndex = 18;
+            this.btnBrandChart.Text = "Vehicle Brand Distribution Chart";
+            this.btnBrandChart.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnBrandChart.Click += new System.EventHandler(this.btnBrandChart_Click);
+            // 
+            // btnColorVehicle
+            // 
+            this.btnColorVehicle.Animated = true;
+            this.btnColorVehicle.BackColor = System.Drawing.Color.Transparent;
+            this.btnColorVehicle.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnColorVehicle.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnColorVehicle.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnColorVehicle.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnColorVehicle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnColorVehicle.FillColor = System.Drawing.Color.Transparent;
+            this.btnColorVehicle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnColorVehicle.ForeColor = System.Drawing.Color.White;
+            this.btnColorVehicle.Location = new System.Drawing.Point(0, 41);
+            this.btnColorVehicle.Name = "btnColorVehicle";
+            this.btnColorVehicle.Padding = new System.Windows.Forms.Padding(45, 0, 0, 0);
+            this.btnColorVehicle.Size = new System.Drawing.Size(250, 62);
+            this.btnColorVehicle.TabIndex = 17;
+            this.btnColorVehicle.Text = "Vehicle Color Distribution Chart";
+            this.btnColorVehicle.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnColorVehicle.Click += new System.EventHandler(this.btnColorVehicle_Click);
             // 
             // btnEmployeeChar
             // 
@@ -442,7 +484,7 @@
             this.btnEmployeeChar.Location = new System.Drawing.Point(0, 0);
             this.btnEmployeeChar.Name = "btnEmployeeChar";
             this.btnEmployeeChar.Padding = new System.Windows.Forms.Padding(45, 0, 0, 0);
-            this.btnEmployeeChar.Size = new System.Drawing.Size(250, 36);
+            this.btnEmployeeChar.Size = new System.Drawing.Size(250, 41);
             this.btnEmployeeChar.TabIndex = 13;
             this.btnEmployeeChar.Text = "Employee Statistics Chart";
             this.btnEmployeeChar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -468,27 +510,6 @@
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
-            // 
-            // btnColorVehicle
-            // 
-            this.btnColorVehicle.Animated = true;
-            this.btnColorVehicle.BackColor = System.Drawing.Color.Transparent;
-            this.btnColorVehicle.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnColorVehicle.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnColorVehicle.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnColorVehicle.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnColorVehicle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnColorVehicle.FillColor = System.Drawing.Color.Transparent;
-            this.btnColorVehicle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnColorVehicle.ForeColor = System.Drawing.Color.White;
-            this.btnColorVehicle.Location = new System.Drawing.Point(0, 36);
-            this.btnColorVehicle.Name = "btnColorVehicle";
-            this.btnColorVehicle.Padding = new System.Windows.Forms.Padding(45, 0, 0, 0);
-            this.btnColorVehicle.Size = new System.Drawing.Size(250, 36);
-            this.btnColorVehicle.TabIndex = 17;
-            this.btnColorVehicle.Text = "Vehicle Color Distribution Chart";
-            this.btnColorVehicle.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnColorVehicle.Click += new System.EventHandler(this.btnColorVehicle_Click);
             // 
             // guna2GradientPanel1
             // 
@@ -516,27 +537,6 @@
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(250, 1063);
             this.guna2GradientPanel1.TabIndex = 2;
-            // 
-            // btnBrandChart
-            // 
-            this.btnBrandChart.Animated = true;
-            this.btnBrandChart.BackColor = System.Drawing.Color.Transparent;
-            this.btnBrandChart.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnBrandChart.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnBrandChart.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnBrandChart.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnBrandChart.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnBrandChart.FillColor = System.Drawing.Color.Transparent;
-            this.btnBrandChart.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBrandChart.ForeColor = System.Drawing.Color.White;
-            this.btnBrandChart.Location = new System.Drawing.Point(0, 72);
-            this.btnBrandChart.Name = "btnBrandChart";
-            this.btnBrandChart.Padding = new System.Windows.Forms.Padding(45, 0, 0, 0);
-            this.btnBrandChart.Size = new System.Drawing.Size(250, 36);
-            this.btnBrandChart.TabIndex = 18;
-            this.btnBrandChart.Text = "Vehicle Brand Distribution Chart";
-            this.btnBrandChart.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnBrandChart.Click += new System.EventHandler(this.btnBrandChart_Click);
             // 
             // MainFr
             // 

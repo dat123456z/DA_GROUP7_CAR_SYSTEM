@@ -389,8 +389,8 @@ namespace DA_GROUP7_CAR_SYSTEM
 
         private void btnBuy_Click(object sender, EventArgs e)
         {
-            BuyCar bc = new BuyCar(label1.Text);
-            bc.Show();
+           // BuyCar bc = new BuyCar(label1.Text);
+           // bc.Show();
             this.Hide();
         }
     }

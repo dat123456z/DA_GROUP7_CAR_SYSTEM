@@ -149,17 +149,17 @@ namespace DA_GROUP7_CAR_SYSTEM
 
         private void btnEmployeeChar_Click(object sender, EventArgs e)
         {
-            openChildForm(new EmployeeChart());
+          //  openChildForm(new EmployeeChart());
         }
 
         private void btnColorVehicle_Click(object sender, EventArgs e)
         {
-            openChildForm(new ColorVehicleChart());
+          //  openChildForm(new ColorVehicleChart());
         }
 
         private void btnBrandChart_Click(object sender, EventArgs e)
         {
-            openChildForm(new BrandVehicleChart());
+         //   openChildForm(new BrandVehicleChart());
         }
     }
 }
