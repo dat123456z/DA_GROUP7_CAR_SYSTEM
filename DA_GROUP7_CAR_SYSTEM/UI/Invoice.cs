@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
-using DA_GROUP7_CAR_SYSTEM.DBLayer;
+using DA_GROUP7_CAR_SYSTEM.BSLayer;
 
 namespace DA_GROUP7_CAR_SYSTEM
 {
     public partial class Invoice : Form
     {
-        private DBMain db = new DBMain();
+        private BLInvoice blInvoice = new BLInvoice();
 
         public Invoice()
         {
@@ -23,8 +23,7 @@ namespace DA_GROUP7_CAR_SYSTEM
         {
             try
             {
-                string sql = "SELECT * FROM Invoice";
-                DataSet ds = db.ExecuteQueryDataSet(sql, CommandType.Text);
+                DataSet ds = blInvoice.GetInvoices();
                 dgvInvoice.DataSource = ds.Tables[0];
 
                 // Set the DataGridView to fill its container
@@ -32,8 +31,6 @@ namespace DA_GROUP7_CAR_SYSTEM
 
                 // Ensure the DataGridView stays within its container
                 dgvInvoice.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-
-                // Column configuration will be done in DataBindingComplete event
             }
             catch (Exception ex)
             {
@@ -45,18 +42,6 @@ namespace DA_GROUP7_CAR_SYSTEM
         {
             try
             {
-                // Configure column widths and sizing after data binding is complete
-                //if (dgvInvoice.Columns.Contains("InvoiceID"))
-                //    dgvInvoice.Columns["InvoiceID"].Width = 80;
-                //if (dgvInvoice.Columns.Contains("InvoiceDate"))
-                //    dgvInvoice.Columns["InvoiceDate"].Width = 120;
-                //if (dgvInvoice.Columns.Contains("CustomerID"))
-                //    dgvInvoice.Columns["CustomerID"].Width = 100;
-                //if (dgvInvoice.Columns.Contains("EmployeeID"))
-                //    dgvInvoice.Columns["EmployeeID"].Width = 100;
-                //if (dgvInvoice.Columns.Contains("TotalAmount"))
-                //    dgvInvoice.Columns["TotalAmount"].Width = 120;
-
                 // Configure the DataGridView to fit within its container
                 dgvInvoice.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dgvInvoice.AllowUserToResizeColumns = true;
@@ -71,7 +56,6 @@ namespace DA_GROUP7_CAR_SYSTEM
         private bool ValidateInvoiceInputs(out string errorField)
         {
             errorField = "";
-            if (string.IsNullOrWhiteSpace(txtInvoiceID.Text)) { errorField = "Invoice ID"; return false; }
             if (string.IsNullOrWhiteSpace(txtCustomerID.Text)) { errorField = "Customer ID"; return false; }
             if (string.IsNullOrWhiteSpace(txtEmployeeID.Text)) { errorField = "Employee ID"; return false; }
             if (!decimal.TryParse(txtTotalAmount.Text, out _)) { errorField = "Total Amount"; return false; }
@@ -86,18 +70,13 @@ namespace DA_GROUP7_CAR_SYSTEM
                 return;
             }
 
-            int id = int.Parse(txtInvoiceID.Text);
-            string checkSql = $"SELECT COUNT(*) FROM Invoice WHERE InvoiceID = {id}";
-            DataSet ds = db.ExecuteQueryDataSet(checkSql, CommandType.Text);
-            if (Convert.ToInt32(ds.Tables[0].Rows[0][0]) > 0)
-            {
-                MessageBox.Show("Invoice ID already exists.");
-                return;
-            }
+            int customerID = int.Parse(txtCustomerID.Text);
+            int employeeID = int.Parse(txtEmployeeID.Text);
+            decimal totalAmount = decimal.Parse(txtTotalAmount.Text);
+            DateTime invoiceDate = dtpInvoiceDate.Value;
 
-            string sql = $"INSERT INTO Invoice VALUES ({id}, '{dtpInvoiceDate.Value:yyyy-MM-dd}', {txtCustomerID.Text}, {txtEmployeeID.Text}, {txtTotalAmount.Text})";
             string error = "";
-            if (db.MyExecuteNonQuery(sql, CommandType.Text, ref error))
+            if (blInvoice.AddInvoice( invoiceDate, customerID, employeeID, totalAmount, ref error))
             {
                 MessageBox.Show("Invoice added.");
                 LoadInvoiceData();
@@ -110,7 +89,7 @@ namespace DA_GROUP7_CAR_SYSTEM
         {
             if (dgvInvoice.SelectedRows.Count == 0) return;
             var row = dgvInvoice.SelectedRows[0];
-            txtInvoiceID.Text = row.Cells["InvoiceID"].Value.ToString();
+            //txtInvoiceID.Text = row.Cells["InvoiceID"].Value.ToString();
             txtCustomerID.Text = row.Cells["CustomerID"].Value.ToString();
             txtEmployeeID.Text = row.Cells["EmployeeID"].Value.ToString();
             txtTotalAmount.Text = row.Cells["TotalAmount"].Value.ToString();
@@ -126,10 +105,14 @@ namespace DA_GROUP7_CAR_SYSTEM
                 return;
             }
 
-            int id = Convert.ToInt32(dgvInvoice.SelectedRows[0].Cells["InvoiceID"].Value);
-            string sql = $"UPDATE Invoice SET InvoiceDate = '{dtpInvoiceDate.Value:yyyy-MM-dd}', CustomerID = {txtCustomerID.Text}, EmployeeID = {txtEmployeeID.Text}, TotalAmount = {txtTotalAmount.Text} WHERE InvoiceID = {id}";
+            int invoiceID = Convert.ToInt32(dgvInvoice.SelectedRows[0].Cells["InvoiceID"].Value);
+            int customerID = int.Parse(txtCustomerID.Text);
+            int employeeID = int.Parse(txtEmployeeID.Text);
+            decimal totalAmount = decimal.Parse(txtTotalAmount.Text);
+            DateTime invoiceDate = dtpInvoiceDate.Value;
+
             string error = "";
-            if (db.MyExecuteNonQuery(sql, CommandType.Text, ref error))
+            if (blInvoice.UpdateInvoice(invoiceID, invoiceDate, customerID, employeeID, totalAmount, ref error))
             {
                 MessageBox.Show("Invoice updated.");
                 LoadInvoiceData();
@@ -141,10 +124,10 @@ namespace DA_GROUP7_CAR_SYSTEM
         private void btnDeleteInvoice_Click(object sender, EventArgs e)
         {
             if (dgvInvoice.SelectedRows.Count == 0) return;
-            int id = Convert.ToInt32(dgvInvoice.SelectedRows[0].Cells["InvoiceID"].Value);
-            string sql = $"DELETE FROM Invoice WHERE InvoiceID = {id}";
+            int invoiceID = Convert.ToInt32(dgvInvoice.SelectedRows[0].Cells["InvoiceID"].Value);
+            
             string error = "";
-            if (db.MyExecuteNonQuery(sql, CommandType.Text, ref error))
+            if (blInvoice.DeleteInvoice(invoiceID, ref error))
             {
                 MessageBox.Show("Invoice deleted.");
                 LoadInvoiceData();
@@ -155,7 +138,6 @@ namespace DA_GROUP7_CAR_SYSTEM
 
         private void ClearInputs()
         {
-            txtInvoiceID.Clear();
             txtCustomerID.Clear();
             txtEmployeeID.Clear();
             txtTotalAmount.Clear();

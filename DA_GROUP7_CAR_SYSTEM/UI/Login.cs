@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using DA_GROUP7_CAR_SYSTEM.BSLayer;
 using System.Linq;
+using DA_GROUP7_CAR_SYSTEM.UI;
 
 namespace DA_GROUP7_CAR_SYSTEM
 {
@@ -90,7 +91,7 @@ namespace DA_GROUP7_CAR_SYSTEM
                 this.Hide();
             }else if(loginName == "admin" && password == "admin")
             {
-                MainFr fr1 = new MainFr();
+                FRMain fr1 = new FRMain();
                 lgin = true;
                 fr1.Show();
                 this.Hide();

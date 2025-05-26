@@ -50,7 +50,7 @@ namespace DA_GROUP7_CAR_SYSTEM.UI
 
                 DataPoint point = new DataPoint();
                 point.SetValueXY(brand, count);
-                point.Label = ""; // Ẩn label trong biểu đồ
+                point.Label = $"{brand}: {percent:P1}";
                 point.LegendText = $"{brand}: {count} ({percent:P1})";
                 series.Points.Add(point);
             }
@@ -86,13 +86,14 @@ namespace DA_GROUP7_CAR_SYSTEM.UI
             area.AxisX.Interval = 1;
             area.AxisX.TitleFont = new Font("Segoe UI", 12, FontStyle.Bold);
             area.AxisY.TitleFont = new Font("Segoe UI", 12, FontStyle.Bold);
+            area.AxisX.MajorGrid.Enabled = false;
+            area.AxisY.MajorGrid.Enabled = false;
 
             Series series = new Series("Vehicle Colors");
             series.ChartType = SeriesChartType.Column;
             series.IsValueShownAsLabel = true;
             series.Font = new Font("Segoe UI", 10, FontStyle.Bold);
 
-            // Danh sách màu tượng trưng
             Color[] colorSamples = new Color[]
             {
         Color.SteelBlue, Color.Orange, Color.MediumSeaGreen,
@@ -108,12 +109,19 @@ namespace DA_GROUP7_CAR_SYSTEM.UI
                 int qty = Convert.ToInt32(row["SoLuong"]);
                 int index = series.Points.AddXY(colorName, qty);
 
-                // Tô màu tượng trưng
-                series.Points[index].Color = colorSamples[colorIndex % colorSamples.Length];
-                // Hiển thị số lượng trên cột
+                try
+                {
+                    series.Points[index].Color = Color.FromName(colorName);
+                }
+                catch
+                {
+                    series.Points[index].Color = colorSamples[colorIndex % colorSamples.Length];
+                }
+                
+                series.Points[index].BorderColor = Color.Black;
+
                 series.Points[index].Label = qty.ToString();
-                // Gán legend chú thích rõ ràng
-                series.Points[index].LegendText = $"{colorName}: {qty} vehicles";
+                series.Points[index].LegendText = colorName;
 
                 colorIndex++;
             }
@@ -121,11 +129,6 @@ namespace DA_GROUP7_CAR_SYSTEM.UI
             chart.Series.Add(series);
             chart.Titles.Add("Vehicle Stock by Color");
             chart.Titles[0].Font = new Font("Segoe UI", 14, FontStyle.Bold);
-
-            // Hiển thị chú thích
-            chart.Legends.Add(new Legend("Legend"));
-            chart.Legends[0].Docking = Docking.Right;
-            chart.Legends[0].Font = new Font("Segoe UI", 10);
 
             Pn_Chart.Controls.Add(chart);
         }
@@ -157,8 +160,17 @@ namespace DA_GROUP7_CAR_SYSTEM.UI
 
                 DataPoint point = new DataPoint();
                 point.SetValueXY(name, count);
-                point.Label = ""; // Không hiển thị trên miếng bánh
-                point.LegendText = $"{name}: {count} invoices ({percent:P1})";
+                
+                // Extract middle and last name
+                string[] nameParts = name.Split(' ');
+                string displayName = name;
+                if (nameParts.Length > 1)
+                {
+                    displayName = string.Join(" ", nameParts.Skip(1));
+                }
+
+                point.Label = $"{displayName}: {percent:P1}"; // Display middle/last name and percentage
+                point.LegendText = $"{name}: {count} invoices ({percent:P1})"; // Full name in legend
                 series.Points.Add(point);
             }
 
@@ -167,11 +179,12 @@ namespace DA_GROUP7_CAR_SYSTEM.UI
             chart.Titles.Add("Employee Sales Distribution");
             chart.Titles[0].Font = new Font("Segoe UI", 14, FontStyle.Bold);
 
+            // Add legend
             chart.Legends.Add(new Legend("Legend"));
             chart.Legends[0].Docking = Docking.Right;
             chart.Legends[0].Font = new Font("Segoe UI", 10);
 
-            series["PieLabelStyle"] = "Disabled";
+            series["PieLabelStyle"] = "Inside"; // Show label inside slices
             series["PieStartAngle"] = "90";
 
             Pn_Chart.Controls.Add(chart);

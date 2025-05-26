@@ -14,10 +14,10 @@ namespace DA_GROUP7_CAR_SYSTEM.BSLayer
             return db.ExecuteQueryDataSet(sql, CommandType.Text);
         }
 
-        public bool AddInvoice(int invoiceID, DateTime invoiceDate, int customerID, int employeeID, decimal totalAmount, ref string error)
+        public bool AddInvoice(DateTime invoiceDate, int customerID, int employeeID, decimal totalAmount, ref string error)
         {
-            string sql = $"INSERT INTO Invoice (InvoiceID, InvoiceDate, CustomerID, EmployeeID, TotalAmount) " +
-                         $"VALUES ({invoiceID}, '{invoiceDate:yyyy-MM-dd}', {customerID}, {employeeID}, {totalAmount})";
+            string sql = $"INSERT INTO Invoice ( InvoiceDate, CustomerID, EmployeeID, TotalAmount) " +
+                         $"VALUES ('{invoiceDate:yyyy-MM-dd}', {customerID}, {employeeID}, {totalAmount})";
             return db.MyExecuteNonQuery(sql, CommandType.Text, ref error);
         }
 

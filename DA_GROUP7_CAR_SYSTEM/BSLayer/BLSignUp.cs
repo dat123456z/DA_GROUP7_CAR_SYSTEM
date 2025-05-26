@@ -24,7 +24,7 @@ namespace DA_GROUP7_CAR_SYSTEM.BSLayer
                 
                 if (checkDs.Tables[0].Rows.Count > 0)
                 {
-                    error = "Tên đăng nhập đã tồn tại!";
+                    error = "Username already exists!";
                     return false;
                 }
 

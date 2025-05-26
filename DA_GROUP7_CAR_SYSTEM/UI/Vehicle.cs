@@ -287,10 +287,12 @@ namespace DA_GROUP7_CAR_SYSTEM
             }
 
             string error = "";
-            if (blBrand.AddBrand(name, ref error))
+            int newBrandId = blBrand.AddBrand(name, ref error);
+            if (newBrandId > 0)
             {
                 MessageBox.Show("Brand added successfully.");
                 LoadBrandData();
+                LoadBrandComboBox(); // Reload ComboBoxes with new brand
                 txt_Brandname.Clear();
             }
             else

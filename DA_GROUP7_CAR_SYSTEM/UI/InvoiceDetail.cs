@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
-using DA_GROUP7_CAR_SYSTEM.DBLayer;
+using DA_GROUP7_CAR_SYSTEM.BSLayer;
 
 namespace DA_GROUP7_CAR_SYSTEM
 {
     public partial class InvoiceDetail : Form
     {
-        private DBMain db = new DBMain();
+        private BLInvoiceDetail blInvoiceDetail = new BLInvoiceDetail();
+
         public InvoiceDetail()
         {
             InitializeComponent();
@@ -22,8 +23,7 @@ namespace DA_GROUP7_CAR_SYSTEM
         {
             try
             {
-                string sql = "SELECT * FROM InvoiceDetail";
-                DataSet ds = db.ExecuteQueryDataSet(sql, CommandType.Text);
+                DataSet ds = blInvoiceDetail.GetInvoiceDetails();
                 dgvInvoiceDetail.DataSource = ds.Tables[0];
 
                 // Set the DataGridView to fill its container
@@ -31,12 +31,10 @@ namespace DA_GROUP7_CAR_SYSTEM
 
                 // Ensure the DataGridView stays within its container
                 dgvInvoiceDetail.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-
-                // Column configuration will be done in DataBindingComplete event
             }
             catch (Exception ex)
             {
-                 MessageBox.Show("Error loading invoice detail data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error loading invoice detail data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -61,7 +59,7 @@ namespace DA_GROUP7_CAR_SYSTEM
             }
             catch (Exception ex)
             {
-                 MessageBox.Show("Error configuring invoice detail columns: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error configuring invoice detail columns: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -83,17 +81,13 @@ namespace DA_GROUP7_CAR_SYSTEM
                 return;
             }
 
-            string checkSql = $"SELECT COUNT(*) FROM InvoiceDetail WHERE InvoiceID = {txtInvoiceID.Text} AND VehicleID = {txtVehicleID.Text}";
-            DataSet ds = db.ExecuteQueryDataSet(checkSql, CommandType.Text);
-            if (Convert.ToInt32(ds.Tables[0].Rows[0][0]) > 0)
-            {
-                MessageBox.Show("This invoice detail already exists.");
-                return;
-            }
+            int invoiceID = int.Parse(txtInvoiceID.Text);
+            int vehicleID = int.Parse(txtVehicleID.Text);
+            int quantity = int.Parse(txtQuantity.Text);
+            decimal unitPrice = decimal.Parse(txtUnitPrice.Text);
 
-            string sql = $"INSERT INTO InvoiceDetail (InvoiceID, VehicleID, Quantity, UnitPrice) VALUES ({txtInvoiceID.Text}, {txtVehicleID.Text}, {txtQuantity.Text}, {txtUnitPrice.Text})";
             string error = "";
-            if (db.MyExecuteNonQuery(sql, CommandType.Text, ref error))
+            if (blInvoiceDetail.AddInvoiceDetail(invoiceID, vehicleID, quantity, unitPrice, ref error))
             {
                 MessageBox.Show("Invoice detail added.");
                 LoadInvoiceDetailData();
@@ -122,9 +116,11 @@ namespace DA_GROUP7_CAR_SYSTEM
 
             int invoiceID = int.Parse(txtInvoiceID.Text);
             int vehicleID = int.Parse(txtVehicleID.Text);
-            string sql = $"UPDATE InvoiceDetail SET Quantity = {txtQuantity.Text}, UnitPrice = {txtUnitPrice.Text} WHERE InvoiceID = {invoiceID} AND VehicleID = {vehicleID}";
+            int quantity = int.Parse(txtQuantity.Text);
+            decimal unitPrice = decimal.Parse(txtUnitPrice.Text);
+
             string error = "";
-            if (db.MyExecuteNonQuery(sql, CommandType.Text, ref error))
+            if (blInvoiceDetail.UpdateInvoiceDetail(invoiceID, vehicleID, quantity, unitPrice, ref error))
             {
                 MessageBox.Show("Invoice detail updated.");
                 LoadInvoiceDetailData();
@@ -138,9 +134,9 @@ namespace DA_GROUP7_CAR_SYSTEM
             if (dgvInvoiceDetail.SelectedRows.Count == 0) return;
             int invoiceID = Convert.ToInt32(dgvInvoiceDetail.SelectedRows[0].Cells["InvoiceID"].Value);
             int vehicleID = Convert.ToInt32(dgvInvoiceDetail.SelectedRows[0].Cells["VehicleID"].Value);
-            string sql = $"DELETE FROM InvoiceDetail WHERE InvoiceID = {invoiceID} AND VehicleID = {vehicleID}";
+
             string error = "";
-            if (db.MyExecuteNonQuery(sql, CommandType.Text, ref error))
+            if (blInvoiceDetail.DeleteInvoiceDetail(invoiceID, vehicleID, ref error))
             {
                 MessageBox.Show("Invoice detail deleted.");
                 LoadInvoiceDetailData();
@@ -155,6 +151,7 @@ namespace DA_GROUP7_CAR_SYSTEM
             txtVehicleID.Clear();
             txtQuantity.Clear();
             txtUnitPrice.Clear();
+            txtLineTotal.Clear();
         }
     }
 }

@@ -20,10 +20,15 @@ namespace DA_GROUP7_CAR_SYSTEM.BSLayer
         }
 
         // Thêm hãng xe mới
-        public bool AddBrand(string brandName, ref string error)
+        public int AddBrand(string brandName, ref string error)
         {
-            string sql = $"INSERT INTO Brand (BrandName) VALUES (N'{brandName}')";
-            return db.MyExecuteNonQuery(sql, CommandType.Text, ref error);
+            string sql = $"INSERT INTO Brand (BrandName) VALUES (N'{brandName}'); SELECT SCOPE_IDENTITY();";
+            DataSet ds = db.ExecuteQueryDataSet(sql, CommandType.Text);
+            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+                return Convert.ToInt32(ds.Tables[0].Rows[0][0]);
+            }
+            return -1;
         }
 
         // Cập nhật tên hãng
@@ -33,7 +38,11 @@ namespace DA_GROUP7_CAR_SYSTEM.BSLayer
             return db.MyExecuteNonQuery(sql, CommandType.Text, ref error);
         }
 
-        
-    
-}
+        // Lấy brand theo tên
+        public DataSet GetBrandByName(string brandName)
+        {
+            string sql = $"SELECT * FROM Brand WHERE BrandName = N'{brandName}'";
+            return db.ExecuteQueryDataSet(sql, CommandType.Text);
+        }
+    }
 }

@@ -187,23 +187,19 @@ namespace DA_GROUP7_CAR_SYSTEM
             {
                 if (string.IsNullOrEmpty(currentLoginName)) return;
 
-                string sql = $@"SELECT c.* 
-                              FROM Customer c
-                              INNER JOIN SignUp s ON c.FullName = s.FullName
-                              INNER JOIN Login l ON s.LoginName = l.LoginName
-                              WHERE l.LoginName = N'{currentLoginName}'";
-
-                DBMain db = new DBMain();
-                DataSet ds = db.ExecuteQueryDataSet(sql, CommandType.Text);
-
-                if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                DataSet ds = blCustomer.GetCustomers();
+                if (ds != null && ds.Tables.Count > 0)
                 {
-                    DataRow row = ds.Tables[0].Rows[0];
-                    if (txtCustomerID != null) txtCustomerID.Text = row["CustomerID"].ToString();
-                    if (txtFullName != null) txtFullName.Text = row["FullName"].ToString();
-                    if (txtAddress != null) txtAddress.Text = row["Address"].ToString();
-                    if (txtPhoneNumber != null) txtPhoneNumber.Text = row["PhoneNumber"].ToString();
-                    if (txtEmail != null) txtEmail.Text = row["Email"].ToString();
+                    DataRow[] rows = ds.Tables[0].Select($"FullName = '{currentLoginName}'");
+                    if (rows.Length > 0)
+                    {
+                        DataRow row = rows[0];
+                        //if (txtCustomerID != null) txtCustomerID.Text = row["CustomerID"].ToString();
+                        if (txtFullName != null) txtFullName.Text = row["FullName"].ToString();
+                        if (txtAddress != null) txtAddress.Text = row["Address"].ToString();
+                        if (txtPhoneNumber != null) txtPhoneNumber.Text = row["PhoneNumber"].ToString();
+                        if (txtEmail != null) txtEmail.Text = row["Email"].ToString();
+                    }
                 }
             }
             catch (Exception ex)
@@ -294,11 +290,12 @@ namespace DA_GROUP7_CAR_SYSTEM
                 return;
 
             string error = "";
-            string sql = $@"INSERT INTO Customer (FullName, Address, PhoneNumber, Email)
-                           VALUES (N'{(txtFullName != null ? txtFullName.Text : string.Empty)}', N'{(txtAddress != null ? txtAddress.Text : string.Empty)}', N'{(txtPhoneNumber != null ? txtPhoneNumber.Text : string.Empty)}', N'{(txtEmail != null ? txtEmail.Text : string.Empty)}')";
-
-            DBMain db = new DBMain();
-            if (db.MyExecuteNonQuery(sql, CommandType.Text, ref error))
+            if (blCustomer.AddCustomer(
+                txtFullName.Text,
+                txtAddress.Text,
+                txtPhoneNumber.Text,
+                txtEmail.Text,
+                ref error))
             {
                 MessageBox.Show("Customer added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadCustomerData();
@@ -328,10 +325,8 @@ namespace DA_GROUP7_CAR_SYSTEM
 
                     int customerID = Convert.ToInt32(dgvCustomer.SelectedRows[0].Cells["CustomerID"].Value);
                     string error = "";
-                    string sql = $@"DELETE FROM Customer WHERE CustomerID = {customerID}";
 
-                    DBMain db = new DBMain();
-                    if (db.MyExecuteNonQuery(sql, CommandType.Text, ref error))
+                    if (blCustomer.DeleteCustomer(customerID, ref error))
                     {
                         MessageBox.Show("Customer deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadCustomerData();
@@ -357,31 +352,21 @@ namespace DA_GROUP7_CAR_SYSTEM
             if (dgvCustomer != null && dgvCustomer.SelectedRows.Count > 0)
             {
                 // Ensure cell value is not null before conversion
-                 if (dgvCustomer.SelectedRows[0].Cells["CustomerID"].Value == null)
-                    {
-                        MessageBox.Show("Cannot update: Original Customer ID is missing.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                int oldCustomerID = Convert.ToInt32(dgvCustomer.SelectedRows[0].Cells["CustomerID"].Value);
-                int newCustomerID;
-
-                if (txtCustomerID == null || !int.TryParse(txtCustomerID.Text, out newCustomerID))
+                if (dgvCustomer.SelectedRows[0].Cells["CustomerID"].Value == null)
                 {
-                    MessageBox.Show("Please enter a valid Customer ID!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Cannot update: Original Customer ID is missing.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                int customerID = Convert.ToInt32(dgvCustomer.SelectedRows[0].Cells["CustomerID"].Value);
 
                 string error = "";
-                string sql = $@"UPDATE Customer 
-                              
-                                 SET FullName = N'{(txtFullName != null ? txtFullName.Text : string.Empty)}',
-                                  Address = N'{(txtAddress != null ? txtAddress.Text : string.Empty)}',
-                                  PhoneNumber = N'{(txtPhoneNumber != null ? txtPhoneNumber.Text : string.Empty)}',
-                                  Email = N'{(txtEmail != null ? txtEmail.Text : string.Empty)}'
-                              WHERE CustomerID = {oldCustomerID}";
-
-                DBMain db = new DBMain();
-                if (db.MyExecuteNonQuery(sql, CommandType.Text, ref error))
+                if (blCustomer.UpdateCustomer(
+                    customerID,
+                    txtFullName.Text,
+                    txtAddress.Text,
+                    txtPhoneNumber.Text,
+                    txtEmail.Text,
+                    ref error))
                 {
                     MessageBox.Show("Customer updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadCustomerData();
@@ -404,7 +389,7 @@ namespace DA_GROUP7_CAR_SYSTEM
             if (txtAddress != null) txtAddress.Clear();
             if (txtPhoneNumber != null) txtPhoneNumber.Clear();
             if (txtEmail != null) txtEmail.Clear();
-            if (txtCustomerID != null) txtCustomerID.Clear();
+
         }
 
         private void dgvCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -415,8 +400,7 @@ namespace DA_GROUP7_CAR_SYSTEM
                 // Ensure column names match your DataTable/DataGridView and cells are not null
                 if (dgvCustomer.Columns != null && row.Cells != null)
                 {
-                    if (dgvCustomer.Columns.Contains("CustomerID") && row.Cells["CustomerID"].Value != null)
-                        if (txtCustomerID != null) txtCustomerID.Text = row.Cells["CustomerID"].Value.ToString() ?? "";
+                   
                     if (dgvCustomer.Columns.Contains("FullName") && row.Cells["FullName"].Value != null)
                         if (txtFullName != null) txtFullName.Text = row.Cells["FullName"].Value.ToString() ?? "";
                     if (dgvCustomer.Columns.Contains("Address") && row.Cells["Address"].Value != null)
@@ -434,23 +418,21 @@ namespace DA_GROUP7_CAR_SYSTEM
             if (dgvCustomer != null && dgvCustomer.SelectedRows.Count > 0)
             {
                 DataGridViewRow row = dgvCustomer.SelectedRows[0];
-                 if (dgvCustomer.Columns != null && row.Cells != null)
+                if (dgvCustomer.Columns != null && row.Cells != null)
                 {
-                    if (dgvCustomer.Columns.Contains("CustomerID") && row.Cells["CustomerID"].Value != null)
-                       if (txtCustomerID != null) txtCustomerID.Text = row.Cells["CustomerID"].Value.ToString() ?? "";
                     if (dgvCustomer.Columns.Contains("FullName") && row.Cells["FullName"].Value != null)
-                       if (txtFullName != null) txtFullName.Text = row.Cells["FullName"].Value.ToString() ?? "";
+                        if (txtFullName != null) txtFullName.Text = row.Cells["FullName"].Value.ToString() ?? "";
                     if (dgvCustomer.Columns.Contains("Address") && row.Cells["Address"].Value != null)
-                       if (txtAddress != null) txtAddress.Text = row.Cells["Address"].Value.ToString() ?? "";
+                        if (txtAddress != null) txtAddress.Text = row.Cells["Address"].Value.ToString() ?? "";
                     if (dgvCustomer.Columns.Contains("PhoneNumber") && row.Cells["PhoneNumber"].Value != null)
-                       if (txtPhoneNumber != null) txtPhoneNumber.Text = row.Cells["PhoneNumber"].Value.ToString() ?? "";
+                        if (txtPhoneNumber != null) txtPhoneNumber.Text = row.Cells["PhoneNumber"].Value.ToString() ?? "";
                     if (dgvCustomer.Columns.Contains("Email") && row.Cells["Email"].Value != null)
-                       if (txtEmail != null) txtEmail.Text = row.Cells["Email"].Value.ToString() ?? "";
+                        if (txtEmail != null) txtEmail.Text = row.Cells["Email"].Value.ToString() ?? "";
                 }
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn một khách hàng để cập nhật!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a customer to update!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -458,17 +440,17 @@ namespace DA_GROUP7_CAR_SYSTEM
         {
             try
             {
-                // Đặt tỷ lệ chiều rộng các cột
+                // Set column widths
                 if (dgvCustomer.Columns.Count >= 5)
                 {
-                    dgvCustomer.Columns["Customer ID"].Width = 80;  // Cột ID nhỏ hơn
-                    dgvCustomer.Columns["Full Name"].Width = 150;
+                    dgvCustomer.Columns["CustomerID"].Width = 80;  // ID column smaller
+                    dgvCustomer.Columns["FullName"].Width = 150;
                     dgvCustomer.Columns["Address"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dgvCustomer.Columns["Phone Number"].Width = 120;
+                    dgvCustomer.Columns["PhoneNumber"].Width = 120;
                     dgvCustomer.Columns["Email"].Width = 180;
                 }
 
-                // Cho phép xuống dòng
+                // Allow word wrap
                 dgvCustomer.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             }
             catch (Exception ex)
@@ -591,13 +573,7 @@ namespace DA_GROUP7_CAR_SYSTEM
                 if (dv.Count == 0)
                 {
                     MessageBox.Show("No matching records found!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    // Optionally, reset to show all records after the message if no results found
-                    // dv.RowFilter = ""; 
-                    // dgvCustomer.DataSource = allCustomers; // Assign original data source
-                } 
-                // Always update the DataSource with the filtered DataView, even if empty, to show no results
-                dgvCustomer.DataSource = dv;
-
+                }
             }
             catch (Exception ex)
             {
