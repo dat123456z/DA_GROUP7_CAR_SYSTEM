@@ -15,6 +15,12 @@ namespace DA_GROUP7_CAR_SYSTEM.UI
         public FRMain()
         {
             InitializeComponent();
+            
+
+        }
+        private void FRMain_Load(object sender, EventArgs e)
+        {
+            btn_Homeload_Click();
         }
         private Form activeForm = null;
 
@@ -71,6 +77,26 @@ namespace DA_GROUP7_CAR_SYSTEM.UI
         private void btn_Chart_Click(object sender, EventArgs e)
         {
             openChildForm(new Statistical());
+        }
+
+        private void btn_Home_Click(object sender, EventArgs e)
+        {
+
+            
+            FormPage fg =new FormPage(Name);
+            fg.Offlabel();
+            openChildForm(fg);
+        }
+        private void btn_Homeload_Click()
+        {
+            FormPage fg = new FormPage(Name);
+            fg.Offlabel();
+            openChildForm(fg);
+        }
+
+        private void btn_Report_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ReportAnnual());
         }
     }
 }

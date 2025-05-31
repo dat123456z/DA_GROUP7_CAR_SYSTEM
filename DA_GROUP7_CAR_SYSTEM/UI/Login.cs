@@ -183,5 +183,12 @@ namespace DA_GROUP7_CAR_SYSTEM
                     phoneNumber.StartsWith("07") || phoneNumber.StartsWith("08") || 
                     phoneNumber.StartsWith("09"));
         }
+
+        private void btn_Undo_Click(object sender, EventArgs e)
+        {
+            targetX = 0;
+            animationTimer.Start();
+            this.guna2PictureBox1.Visible = false;
+        }
     }
 }

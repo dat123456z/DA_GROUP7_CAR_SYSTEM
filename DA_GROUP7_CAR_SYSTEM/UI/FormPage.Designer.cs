@@ -65,7 +65,6 @@
             this.gunaPictureBox_Car2 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaPictureBox_Car1 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaPictureBox_Car = new Guna.UI.WinForms.GunaPictureBox();
-            this.btnBuy = new Guna.UI.WinForms.GunaAdvenceButton();
             this.label1 = new System.Windows.Forms.Label();
             this.btnLogout = new Guna.UI.WinForms.GunaAdvenceButton();
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).BeginInit();
@@ -408,7 +407,7 @@
             this.gunaLabel_name.BackColor = System.Drawing.Color.Transparent;
             this.gunaLabel_name.Font = new System.Drawing.Font("Britannic Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel_name.ForeColor = System.Drawing.Color.Transparent;
-            this.gunaLabel_name.Location = new System.Drawing.Point(53, 142);
+            this.gunaLabel_name.Location = new System.Drawing.Point(53, 128);
             this.gunaLabel_name.Name = "gunaLabel_name";
             this.gunaLabel_name.Size = new System.Drawing.Size(111, 26);
             this.gunaLabel_name.TabIndex = 18;
@@ -529,40 +528,6 @@
             this.gunaPictureBox_Car.TabIndex = 9;
             this.gunaPictureBox_Car.TabStop = false;
             // 
-            // btnBuy
-            // 
-            this.btnBuy.AnimationHoverSpeed = 0.07F;
-            this.btnBuy.AnimationSpeed = 0.03F;
-            this.btnBuy.BackColor = System.Drawing.Color.Transparent;
-            this.btnBuy.BaseColor = System.Drawing.Color.DarkGray;
-            this.btnBuy.BorderColor = System.Drawing.Color.Black;
-            this.btnBuy.CheckedBaseColor = System.Drawing.Color.Silver;
-            this.btnBuy.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnBuy.CheckedForeColor = System.Drawing.Color.White;
-            this.btnBuy.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnBuy.CheckedImage")));
-            this.btnBuy.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnBuy.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuy.Font = new System.Drawing.Font("Century", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuy.ForeColor = System.Drawing.Color.White;
-            this.btnBuy.Image = null;
-            this.btnBuy.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnBuy.LineBottom = 4;
-            this.btnBuy.LineColor = System.Drawing.Color.Transparent;
-            this.btnBuy.Location = new System.Drawing.Point(1133, 702);
-            this.btnBuy.Name = "btnBuy";
-            this.btnBuy.OnHoverBaseColor = System.Drawing.Color.Coral;
-            this.btnBuy.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btnBuy.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnBuy.OnHoverImage = null;
-            this.btnBuy.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnBuy.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnBuy.Radius = 20;
-            this.btnBuy.Size = new System.Drawing.Size(137, 55);
-            this.btnBuy.TabIndex = 21;
-            this.btnBuy.Text = "Buy";
-            this.btnBuy.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -618,7 +583,6 @@
             this.ClientSize = new System.Drawing.Size(1415, 1000);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnBuy);
             this.Controls.Add(this.gunaPanel3);
             this.Controls.Add(this.gunaLabel3);
             this.Controls.Add(this.gunaLabel_name);
@@ -693,7 +657,6 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel7;
         private Guna.UI.WinForms.GunaCircleProgressBar gunaCircleProgressBar1;
         private Guna.UI.WinForms.GunaLabel gunaLabel9;
-        private Guna.UI.WinForms.GunaAdvenceButton btnBuy;
         private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaAdvenceButton btnLogout;
     }

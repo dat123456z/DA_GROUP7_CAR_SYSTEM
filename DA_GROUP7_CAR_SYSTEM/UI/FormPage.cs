@@ -40,6 +40,14 @@ namespace DA_GROUP7_CAR_SYSTEM
             btnLogout.Visible = true;
 
         }
+        public void Offlabel()
+        {
+            label1.Visible = false;
+            btnLogout.Visible = false;
+            guna2ControlBox1.Visible = false;
+            guna2ControlBox2.Visible = false;
+            guna2ControlBox3.Visible = false;
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -48,20 +56,20 @@ namespace DA_GROUP7_CAR_SYSTEM
 
 
             gunaDataGridView1.Rows.Add(8);
-            gunaDataGridView1.Rows[0].Cells[0].Value = Image.FromFile(GetCarImagePath("1.png"));
-            gunaDataGridView1.Rows[1].Cells[0].Value = Image.FromFile(GetCarImagePath("2.png"));
-            gunaDataGridView1.Rows[2].Cells[0].Value = Image.FromFile(GetCarImagePath("3.png"));
-            gunaDataGridView1.Rows[3].Cells[0].Value = Image.FromFile(GetCarImagePath("4.png"));
-            gunaDataGridView1.Rows[4].Cells[0].Value = Image.FromFile(GetCarImagePath("5.png"));
-            gunaDataGridView1.Rows[5].Cells[0].Value = Image.FromFile(GetCarImagePath("6.png"));
-            gunaDataGridView1.Rows[6].Cells[0].Value = Image.FromFile(GetCarImagePath("7.png"));
-            gunaDataGridView1.Rows[7].Cells[0].Value = Image.FromFile(GetCarImagePath("8.png"));
+            gunaDataGridView1.Rows[0].Cells[0].Value = Image.FromFile(GetCarImagePath("1bl.png"));
+            gunaDataGridView1.Rows[1].Cells[0].Value = Image.FromFile(GetCarImagePath("2r.png"));
+            gunaDataGridView1.Rows[2].Cells[0].Value = Image.FromFile(GetCarImagePath("3w.png"));
+            gunaDataGridView1.Rows[3].Cells[0].Value = Image.FromFile(GetCarImagePath("4bl.png"));
+            gunaDataGridView1.Rows[4].Cells[0].Value = Image.FromFile(GetCarImagePath("5w.png"));
+            gunaDataGridView1.Rows[5].Cells[0].Value = Image.FromFile(GetCarImagePath("6r.png"));
+            gunaDataGridView1.Rows[6].Cells[0].Value = Image.FromFile(GetCarImagePath("7bl.png"));
+            gunaDataGridView1.Rows[7].Cells[0].Value = Image.FromFile(GetCarImagePath("8w.png"));
 
 
             gunaDataGridView1.Rows[0].Cells[1].Value = "Audi RS 7";
-            gunaDataGridView1.Rows[1].Cells[1].Value = "Audi RS 5";
-            gunaDataGridView1.Rows[2].Cells[1].Value = "Audi Q3";
-            gunaDataGridView1.Rows[3].Cells[1].Value = "Audi A3";
+            gunaDataGridView1.Rows[1].Cells[1].Value = "Honda Civic";
+            gunaDataGridView1.Rows[2].Cells[1].Value = "Ford Ranger";
+            gunaDataGridView1.Rows[3].Cells[1].Value = "Mazda CX-5";
             gunaDataGridView1.Rows[4].Cells[1].Value = "Audi A4";
             gunaDataGridView1.Rows[5].Cells[1].Value = "Audi A5";
             gunaDataGridView1.Rows[6].Cells[1].Value = "Audi R8 Spyder";
@@ -136,7 +144,7 @@ namespace DA_GROUP7_CAR_SYSTEM
 
                         break;
 
-                    case "Audi RS 5":
+                    case "Honda Civic":
                         gunaLabel1.Text = "Fuel type: Petrol  \r\nMaximum power: 444 hp / 331 kW  \r\nFiscal horsepower: ~40 CV  \r\nCombined fuel consumption: 9.4 L/100 km  \r\nCO2 emissions: 215 g/km  \r\nTransmission: 8-speed automatic";
                         gunaLabel6.Text = "280 Km/h";
                         gunaLabel7.Text = "444 hp / 331 kW";
@@ -144,7 +152,7 @@ namespace DA_GROUP7_CAR_SYSTEM
                         gunaLabel9.Text = "80000$";
 
                         break;
-                    case "Audi Q3":
+                    case "Ford Ranger":
                         gunaLabel1.Text = "Fuel type: Petrol  \r\nMaximum power: 228 hp / 169 kW  \r\nFiscal horsepower: ~17 CV  \r\nCombined fuel consumption: 9.8 L/100 km  \r\nCO2 emissions: 223 g/km  \r\nTransmission: 8-speed automatic  ";
                         gunaLabel6.Text = "210 Km/h";
                         gunaLabel7.Text = "228 hp / 169 kW";
@@ -152,7 +160,7 @@ namespace DA_GROUP7_CAR_SYSTEM
                         gunaLabel9.Text = "38000$";
 
                         break;
-                    case "Audi A3":
+                    case "Mazda CX-5":
                         gunaLabel1.Text = "Fuel type: Petrol  \r\nMaximum power: 201 hp / 150 kW  \r\nFiscal horsepower: ~15 CV  \r\nCombined fuel consumption: 7.1 L/100 km  \r\nCO2 emissions: 163 g/km  \r\nTransmission: 7-speed automatic";
                         gunaLabel6.Text = "240 Km/h";
                         gunaLabel7.Text = "201 hp / 150 kW";
@@ -225,7 +233,7 @@ namespace DA_GROUP7_CAR_SYSTEM
 
                         break;
 
-                    case "Audi RS 5":
+                    case "Honda Civic":
                         gunaLabel1.Text = "Fuel type: Petrol  \r\nMaximum power: 444 hp / 331 kW  \r\nFiscal horsepower: ~40 CV  \r\nCombined fuel consumption: 9.4 L/100 km  \r\nCO2 emissions: 215 g/km  \r\nTransmission: 8-speed automatic";
                         gunaLabel6.Text = "280 Km/h";
                         gunaLabel7.Text = "444 hp / 331 kW";
@@ -233,7 +241,7 @@ namespace DA_GROUP7_CAR_SYSTEM
                         gunaLabel9.Text = "80000$";
 
                         break;
-                    case "Audi Q3":
+                    case "Ford Ranger":
                         gunaLabel1.Text = "Fuel type: Petrol  \r\nMaximum power: 228 hp / 169 kW  \r\nFiscal horsepower: ~17 CV  \r\nCombined fuel consumption: 9.8 L/100 km  \r\nCO2 emissions: 223 g/km  \r\nTransmission: 8-speed automatic  ";
                         gunaLabel6.Text = "210 Km/h";
                         gunaLabel7.Text = "228 hp / 169 kW";
@@ -241,7 +249,7 @@ namespace DA_GROUP7_CAR_SYSTEM
                         gunaLabel9.Text = "38000$";
 
                         break;
-                    case "Audi A3":
+                    case "Mazda CX-5":
                         gunaLabel1.Text = "Fuel type: Petrol  \r\nMaximum power: 201 hp / 150 kW  \r\nFiscal horsepower: ~15 CV  \r\nCombined fuel consumption: 7.1 L/100 km  \r\nCO2 emissions: 163 g/km  \r\nTransmission: 7-speed automatic";
                         gunaLabel6.Text = "240 Km/h";
                         gunaLabel7.Text = "201 hp / 150 kW";
@@ -387,11 +395,6 @@ namespace DA_GROUP7_CAR_SYSTEM
             this.Hide();
         }
 
-        private void btnBuy_Click(object sender, EventArgs e)
-        {
-           // BuyCar bc = new BuyCar(label1.Text);
-           // bc.Show();
-            this.Hide();
-        }
+        
     }
 }

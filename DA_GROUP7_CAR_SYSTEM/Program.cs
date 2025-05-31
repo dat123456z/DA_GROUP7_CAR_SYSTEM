@@ -17,7 +17,7 @@ namespace DA_GROUP7_CAR_SYSTEM
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FRMain());
+            Application.Run(new Login());
         }
     }
 }

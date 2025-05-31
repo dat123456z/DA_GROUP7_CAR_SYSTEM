@@ -36,16 +36,15 @@
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btn_User = new Guna.UI2.WinForms.Guna2Button();
             this.btnLogOut = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_Report = new Guna.UI2.WinForms.Guna2Button();
             this.btn_Chart = new Guna.UI2.WinForms.Guna2Button();
             this.btn_InvoiceDetail = new Guna.UI2.WinForms.Guna2Button();
             this.btn_Invoice = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.btn_Customer = new Guna.UI2.WinForms.Guna2Button();
             this.btn_Vehicle = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_Home = new Guna.UI2.WinForms.Guna2Button();
             this.Pl_Main = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -130,16 +129,15 @@
             // guna2Panel2
             // 
             this.guna2Panel2.BorderRadius = 50;
-            this.guna2Panel2.Controls.Add(this.btn_User);
             this.guna2Panel2.Controls.Add(this.btnLogOut);
-            this.guna2Panel2.Controls.Add(this.guna2Button9);
+            this.guna2Panel2.Controls.Add(this.btn_Report);
             this.guna2Panel2.Controls.Add(this.btn_Chart);
             this.guna2Panel2.Controls.Add(this.btn_InvoiceDetail);
             this.guna2Panel2.Controls.Add(this.btn_Invoice);
             this.guna2Panel2.Controls.Add(this.guna2Button5);
             this.guna2Panel2.Controls.Add(this.btn_Customer);
             this.guna2Panel2.Controls.Add(this.btn_Vehicle);
-            this.guna2Panel2.Controls.Add(this.guna2Button1);
+            this.guna2Panel2.Controls.Add(this.btn_Home);
             this.guna2Panel2.CustomizableEdges.TopLeft = false;
             this.guna2Panel2.CustomizableEdges.TopRight = false;
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -148,25 +146,6 @@
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(250, 745);
             this.guna2Panel2.TabIndex = 1;
-            // 
-            // btn_User
-            // 
-            this.btn_User.AutoRoundedCorners = true;
-            this.btn_User.BackColor = System.Drawing.Color.Transparent;
-            this.btn_User.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_User.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_User.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_User.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_User.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btn_User.FillColor = System.Drawing.Color.Transparent;
-            this.btn_User.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_User.ForeColor = System.Drawing.Color.White;
-            this.btn_User.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_User.Location = new System.Drawing.Point(0, 641);
-            this.btn_User.Name = "btn_User";
-            this.btn_User.Size = new System.Drawing.Size(250, 52);
-            this.btn_User.TabIndex = 10;
-            this.btn_User.Text = "User";
             // 
             // btnLogOut
             // 
@@ -187,23 +166,24 @@
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
-            // guna2Button9
+            // btn_Report
             // 
-            this.guna2Button9.AutoRoundedCorners = true;
-            this.guna2Button9.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button9.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button9.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button9.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button9.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Button9.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button9.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button9.ForeColor = System.Drawing.Color.White;
-            this.guna2Button9.Location = new System.Drawing.Point(0, 364);
-            this.guna2Button9.Name = "guna2Button9";
-            this.guna2Button9.Size = new System.Drawing.Size(250, 52);
-            this.guna2Button9.TabIndex = 8;
-            this.guna2Button9.Text = "Report";
+            this.btn_Report.AutoRoundedCorners = true;
+            this.btn_Report.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Report.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Report.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Report.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Report.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Report.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Report.FillColor = System.Drawing.Color.Transparent;
+            this.btn_Report.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Report.ForeColor = System.Drawing.Color.White;
+            this.btn_Report.Location = new System.Drawing.Point(0, 364);
+            this.btn_Report.Name = "btn_Report";
+            this.btn_Report.Size = new System.Drawing.Size(250, 52);
+            this.btn_Report.TabIndex = 8;
+            this.btn_Report.Text = "Report";
+            this.btn_Report.Click += new System.EventHandler(this.btn_Report_Click);
             // 
             // btn_Chart
             // 
@@ -319,23 +299,24 @@
             this.btn_Vehicle.Text = "Vehicle Management";
             this.btn_Vehicle.Click += new System.EventHandler(this.btn_Vehicle_Click);
             // 
-            // guna2Button1
+            // btn_Home
             // 
-            this.guna2Button1.AutoRoundedCorners = true;
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(250, 52);
-            this.guna2Button1.TabIndex = 0;
-            this.guna2Button1.Text = "Home";
+            this.btn_Home.AutoRoundedCorners = true;
+            this.btn_Home.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Home.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Home.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Home.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Home.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Home.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Home.FillColor = System.Drawing.Color.Transparent;
+            this.btn_Home.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Home.ForeColor = System.Drawing.Color.White;
+            this.btn_Home.Location = new System.Drawing.Point(0, 0);
+            this.btn_Home.Name = "btn_Home";
+            this.btn_Home.Size = new System.Drawing.Size(250, 52);
+            this.btn_Home.TabIndex = 0;
+            this.btn_Home.Text = "Home";
+            this.btn_Home.Click += new System.EventHandler(this.btn_Home_Click);
             // 
             // Pl_Main
             // 
@@ -357,6 +338,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FRMain";
             this.Text = "FRMain";
+            this.Load += new System.EventHandler(this.FRMain_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -369,7 +351,7 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btn_Home;
         private Guna.UI2.WinForms.Guna2Panel Pl_Main;
         private Guna.UI2.WinForms.Guna2Button btn_InvoiceDetail;
         private Guna.UI2.WinForms.Guna2Button btn_Invoice;
@@ -377,11 +359,10 @@
         private Guna.UI2.WinForms.Guna2Button btn_Customer;
         private Guna.UI2.WinForms.Guna2Button btn_Vehicle;
         private Guna.UI2.WinForms.Guna2Button btn_Chart;
-        private Guna.UI2.WinForms.Guna2Button guna2Button9;
+        private Guna.UI2.WinForms.Guna2Button btn_Report;
         private Guna.UI2.WinForms.Guna2Button btnLogOut;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox3;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
-        private Guna.UI2.WinForms.Guna2Button btn_User;
     }
 }
